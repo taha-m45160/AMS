@@ -1,0 +1,28 @@
+.nav{
+    margin: auto;
+}
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#0F245A;
+}
+
+.title{
+    color: #fff;
+    padding:2px;
+    margin: 0px;
+}
+
+.title h1{
+    font-family: 'Ruda';
+    font-size: 40px; 
+    font-weight: 50;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.account-icon{
+    padding: 10px 14px;
+}
