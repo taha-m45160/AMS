@@ -13,7 +13,6 @@ const teachesSchema = new mongoose.Schema({
                     else
                         return false
                 } catch(e) {
-                    console.log(e)
                     return false
                 }
             },
@@ -26,7 +25,5 @@ const teachesSchema = new mongoose.Schema({
         required: true
     }
 })
-
-teachesSchema.index({teacher_ID: 1, section: 1}, {unique: true})
 
 module.exports = mongoose.model('Teaches', teachesSchema)
