@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const takesSchema = new mongoose.Schema({
-    stduent_ID: {
+    student_ID: {
         type: Number,
         required: true,
         validate: {
@@ -13,7 +13,6 @@ const takesSchema = new mongoose.Schema({
                     else
                         return false
                 } catch(e) {
-                    console.log(e)
                     return false
                 }
             },
@@ -26,7 +25,5 @@ const takesSchema = new mongoose.Schema({
         required: true
     }
 })
-
-takesSchema.index({student_ID: 1, section: 1}, {unique: true})
 
 module.exports = mongoose.model('Takes', takesSchema)

@@ -17,7 +17,6 @@ const sectionSchema = new mongoose.Schema({
                     else
                         return false
                 } catch(e) {
-                    console.log(e);
                     return false;
                 }
             },
@@ -36,7 +35,5 @@ const sectionSchema = new mongoose.Schema({
         max: new Date().getFullYear()
     }
 })
-
-sectionSchema.index({ID: 1, course_ID: 1, term: 1, year: 1}, {unique: true})
 
 module.exports = mongoose.model('Section', sectionSchema)

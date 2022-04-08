@@ -4,8 +4,7 @@ const userSchema = new mongoose.Schema({
     ID: {
         type: Number,
         required: true,
-        unique: true,
-        index: 1
+        unique: true
     },
     email: {
         type: String,
@@ -57,7 +56,6 @@ const userSchema = new mongoose.Schema({
                                 else
                                     return false
                             } catch(e){
-                                console.log(e);
                                 return false;
                             }
                         })
