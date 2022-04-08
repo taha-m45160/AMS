@@ -3,8 +3,8 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 import './App.css';
 import Login from './pages/misc/Login/Login.js'
-import Navbar from './components/Navbar/Navbar';
 import ChangePassword from './pages/admin/changePassword/changePassword';
+import CreateCourse from './pages/admin/createCourse/createCourse';
 
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
           <Routes>
               <Route path="/login" element={<Login />}/>
               <Route path="/changepassword" element={<ChangePassword />}/>
+              <Route path="/createcourse" element={<CreateCourse/>}/>
           </Routes>
       </Router>
     </div>
