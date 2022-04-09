@@ -23,15 +23,12 @@ const authenticateUser = async (req, res, next) => {
         const token = req.cookies.jwt
         const decodedToken = await verify(token, secretStr)
         const tokenData = decodedToken.id.split("|")
-        const userType = takenData[1] // Need to verify with frontend
-        const email = tokenData[0]
+        const userType = tokenData[1] // Need to verify with frontend
+        const ID = tokenData[0]
 
-        if (userType == "teacher") {
-            res.email = email
-            next() 
-        } else {
-            res.status(401).send()
-        }
+        res.userType = userType
+        res.ID = ID
+        next() 
     } 
     catch{
         res.status(401).send() 
