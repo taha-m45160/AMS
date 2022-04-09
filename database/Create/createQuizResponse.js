@@ -14,7 +14,7 @@ async function createQuizResponse(student_id, title, section_id, course_id, term
     })
 
     const quiz_response = await Quiz_response.create({
-        student_ID: students_id,
+        student_ID: student_id,
         Quiz: quiz._id,
         answers: answers,
         date_submitted: new Date()
