@@ -59,9 +59,10 @@ const userSchema = new mongoose.Schema({
                                 return false;
                             }
                         })
+                    } else {
+                        return false;
                     }
                 }
-                return ((this.role === 'Parent' && arr.length) || (this.role !== 'Parent' && !arr.length))
             },
             message: 'Invalid student ID(s)'
         }    

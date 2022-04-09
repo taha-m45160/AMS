@@ -14,7 +14,7 @@ async function createAssignmentResponse(student_id, title, section_id, course_id
     })
 
     const assignment_response = await Assignment_response.create({
-        student_ID: students_id,
+        student_ID: student_id,
         assignment: assignment._id,
         date_submitted: new Date(),
         attachment: attachment

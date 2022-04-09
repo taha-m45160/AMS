@@ -1,7 +1,7 @@
 const Quizzes = require('../Schema/Quizzes.js')
 const mongoose = require('mongoose')
 
-async function createQuiz(title, section_id, course_id, term, year, questions, section, open_date, duration) {
+async function createQuiz(title, section_id, course_id, term, year, questions, open_date, duration) {
     const section = await mongoose.connection.db.collection('sections').findOne({
         ID: section_id,
         course_ID: course_id, 

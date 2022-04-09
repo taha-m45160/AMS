@@ -1,6 +1,6 @@
 const uri = "mongodb+srv://mutahar789:Hello0985@ams.qh2kz.mongodb.net/AMS?retryWrites=true&w=majority";
 const {connect, dropCollection} = require('./util')
-const populate = require('./populate')
+const populate = require('./Populate/populate')
 const {createIndexes} = require('./index')
 
 run()
