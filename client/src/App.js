@@ -6,6 +6,7 @@ import Login from './pages/misc/Login/Login.js'
 import ChangePassword from './pages/admin/changePassword/changePassword';
 import CreateCourse from './pages/admin/createCourse/createCourse';
 import Enroll from './pages/admin/enroll/enroll'
+import StudentHome from './pages/student/home/home';
 
 
 function App() {
@@ -13,10 +14,11 @@ function App() {
     <div>
       <Router>
           <Routes>
-              <Route path="/login" element={<Login />}/>
-              <Route path="/changepassword" element={<ChangePassword />}/>
-              <Route path="/createcourse" element={<CreateCourse/>}/>
-              <Route path="/enroll" element={<Enroll/>}/>
+              <Route path="/admin" element={<Login />}/>
+              <Route path="/admin/changepassword" element={<ChangePassword />}/>
+              <Route path="/admin/createcourse" element={<CreateCourse/>}/>
+              <Route path="/admin/enroll" element={<Enroll/>}/>
+              <Route path="/student" element={<StudentHome/>}/>
           </Routes>
       </Router>
     </div>
