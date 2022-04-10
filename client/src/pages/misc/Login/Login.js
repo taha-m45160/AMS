@@ -1,6 +1,7 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
 import './Login.css'
+import Navbar from '../../../components/Navbar/Navbar'
 const axios = require('axios')
 
 const Login = () => {
@@ -38,14 +39,12 @@ const Login = () => {
         setPw(ev.target.value)
     }
 
-    return ( 
-    <div className="container"> 
-        <div className="box-1">
-            <h1>Academics Management System </h1>
-        </div>
+    return (
+    <div> 
+        <Navbar></Navbar>
         <div className = "p-box"></div>
         <div className = "texxt"> 
-            <h3> Welcome to AMS! Your own platform to effectively manage your academics </h3>
+            <h2> Welcome to AMS! Your own platform to effectively manage your academics </h2>
         </div>
 
 

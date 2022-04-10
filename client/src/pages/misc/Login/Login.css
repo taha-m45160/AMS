@@ -13,12 +13,6 @@ a:hover{
     color:red;
 }
 
-.container{
-    width : 200px;
-    width: 80%;
-    margin: auto; 
-}
-
 .texxt{
     font-style: normal;
     color:#0F245A;
@@ -80,9 +74,9 @@ a:hover{
 }
 
 .p-box{
-    width: 80px;
-    height: 80px;
-    margin-top: 30px; 
+    width: 120px;
+    height: 120px;
+    margin-top: 60px; 
     position: relative;
     background-image:url('../../../../public/AMS.png');
     background-size: 100%;
