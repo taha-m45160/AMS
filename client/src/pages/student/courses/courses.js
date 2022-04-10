@@ -9,7 +9,7 @@ export default function Courses() {
 
     const displayCourses = () => {
         // try {
-        //     const enrolledCourses = await axios.get('http://localhost:8000/students/courses')
+        //     const enrolledCourses = await axios.get('http://localhost:8000/student/courses')
         // } catch (err) {
         //     console.log(err)
         // }

@@ -3,7 +3,7 @@ import './HomepageT.css'
 import Navbar from '../../../components/Navbar/Navbar'
 import Homebar from '../../../components/HomebarT/HomebarT'
 
-const HomepageT = () => {
+const TeacherHomepage = () => {
     return (
         <div className='home-container'>
             <Navbar></Navbar>
@@ -21,4 +21,4 @@ const HomepageT = () => {
     )
 }
 
-export default HomepageT
+export default TeacherHomepage

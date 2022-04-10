@@ -7,12 +7,14 @@ import HomepageS from './pages/student/Homepage/HomepageS'
 import HomepageA from './pages/admin/Homepage/HomepageA'
 import HomepageP from './pages/parents/Homepage/HomepageP'
 import HomepageT from './pages/teachers/Homepage/HomepageT'
-import ChangePassword from './pages/admin/changePassword/changePassword';
-import CreateCourse from './pages/admin/createCourse/createCourse';
+import ChangePassword from './pages/admin/changePassword/changePassword'
+import CreateCourse from './pages/admin/createCourse/createCourse'
 import Enroll from './pages/admin/enroll/enroll'
 import Courses from './pages/student/courses/courses'
 import CourseOverview from './pages/student/courses/overview/overview'
-import Resources from './pages/student/courses/resources/resources';
+import Resources from './pages/student/courses/resources/resources'
+import TeacherHomepage from './pages/teachers/Homepage/HomepageT'
+import TeacherCourses from './pages/teachers/Courses/teachercourses'
 
 function App() {
   return (
@@ -28,8 +30,10 @@ function App() {
               <Route path="/student/courses" element={<Courses/>}/>
               <Route path="/student/courses/CS-300/overview" element={<CourseOverview/>}/>
               <Route path="/student/courses/CS-300/resources" element={<Resources/>}/>
-              <Route path="/parents/" element={(<HomepageP />)}/>
-              <Route path="/teachers/" element={(<HomepageT />)} />
+              <Route path="/parent/" element={(<HomepageP />)}/>
+              <Route path="/teacher/" element={(<TeacherHomepage />)} />
+              <Route path="/teacher/courses" element={(<TeacherCourses />)} />
+          
           </Routes>
       </Router>
     </div>
