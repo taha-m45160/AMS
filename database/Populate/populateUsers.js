@@ -17,7 +17,7 @@ async function populateUsers(){
     await createUser('urwa.hassan', 'Urwa' , undefined, 'Hassan', 'urwa.hassan@gmail.com', 'Teacher', teacherPassword)
     await createUser('mahira.khan', 'Mahira' , undefined, 'Khan', 'mahira.khan@gmail.com', 'Teacher', teacherPassword)
     await createUser('hassan.raza', 'Hassan' , undefined, 'Raza', 'hassan.raza@gmail.com', 'Teacher', teacherPassword)
-    await createUser('raheela.Sharif', 'Raheela' , 'Aslam', 'Sharif', 'raheela.sharif@gmail.com', 'Teacher', teacherPassword)
+    await createUser('raheela.sharif', 'Raheela' , 'Aslam', 'Sharif', 'raheela.sharif@gmail.com', 'Teacher', teacherPassword)
     await createUser('mursal.akhtar', 'Mursal' , undefined, 'Akhtar', 'mursal.akhtar@gmail.com', 'Teacher', teacherPassword)
 
     await createUser('23100000', 'Humaira', undefined, 'Mushtaq', 'humaira.mushtaq@gmail.com', 'Student', studentPassword)
