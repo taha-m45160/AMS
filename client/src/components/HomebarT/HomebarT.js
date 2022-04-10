@@ -18,17 +18,17 @@ const Homebar = () => {
             <ul className='bar-container'>
                 <li className='item'>
                     <img src={Welcome} alt="Welcome"/>
-                    <a href="HOME-PAGE">Welcome</a>
+                    <button className='click-items'>Welcome</button>
                 </li>
                 
                 <li className='item'>
                     <img src={Courses} alt="Courses"/>
-                    <button onClick={() => toCourses()}>Courses</button>
+                    <button className='click-items'>Courses</button>
                 </li>
                 
                 <li className='item'>
                     <img src={Announcements} alt="Announcements"/>
-                    <a href="ANNOUNCEMENTS">Announcements</a>
+                    <button className='click-items'>Announcements</button>
                 </li>
             </ul>
         </div>
