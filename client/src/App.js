@@ -7,6 +7,7 @@ import ChangePassword from './pages/admin/changePassword/changePassword';
 import CreateCourse from './pages/admin/createCourse/createCourse';
 import Enroll from './pages/admin/enroll/enroll'
 import Courses from './pages/student/courses/courses'
+import CourseOverview from './pages/student/courses/overview/overview'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
               <Route path="/admin/createcourse" element={<CreateCourse/>}/>
               <Route path="/admin/enroll" element={<Enroll/>}/>
               <Route path="/student/courses" element={<Courses/>}/>
+              <Route path="/student/courses/CS-300/overview" element={<CourseOverview/>}/>
           </Routes>
       </Router>
     </div>

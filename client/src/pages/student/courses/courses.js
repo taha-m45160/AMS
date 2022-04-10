@@ -23,8 +23,9 @@ export default function Courses() {
         ]
         const courseComponents = []
 
-        const toCourse = (ctitle) => {
-            navigate(`/student/courses/${ctitle}/home`)
+        const toCourse = (ccode) => {
+            sessionStorage.setItem("course", ccode)
+            navigate(`/student/courses/${ccode}/overview`)
         }
 
         enrolledCourses.map((course) => {
@@ -42,6 +43,8 @@ export default function Courses() {
     return (
         <div className="courses">
             <Navbar/>
+
+            <h1>Courses</h1>
 
             <div className="course-tabs">
                 {displayCourses().map((comp) => {
