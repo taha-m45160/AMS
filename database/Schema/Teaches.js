@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const teachesSchema = new mongoose.Schema({
     teacher_ID: {
-        type: Number,
+        type: String,
         required: true,
         validate: {
             validator: async function(t_id){
