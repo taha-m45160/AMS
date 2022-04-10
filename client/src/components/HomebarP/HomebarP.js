@@ -52,7 +52,7 @@ const Homebar = () => {
 
     const reqMeeting = (ev) => {
         ev.preventDefault();
-        navigate('/parents/request-meeting')
+        navigate('parent/request-meeting')
     }
 
     return (
