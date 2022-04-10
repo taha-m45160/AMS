@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const assignmentResponseSchema = new mongoose.Schema({
     student_ID: {
-        type: Number,
+        type: String,
         required: true
     },
     assignment: {
