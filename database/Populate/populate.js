@@ -7,6 +7,8 @@ const {populateResources} = require('./populateResources')
 const {populateQuizzes} = require('./populateQuizzes')
 const {populateAssignments} = require('./populateAssignments')
 const {populateAnnouncements} = require('./populateAnnouncements')
+const {populateGradebook} = require('./populateGradebook')
+
 
 async function populate(){
 
@@ -21,6 +23,7 @@ async function populate(){
     await populateQuizzes();
     await populateAssignments();
     await populateAnnouncements();
+    await populateGradebook();
 }
 
 module.exports = {populate}
