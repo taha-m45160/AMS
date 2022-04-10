@@ -23,14 +23,15 @@ export default function Courses() {
         ]
         const courseComponents = []
 
-        const toCourse = (ccode) => {
-            sessionStorage.setItem("course", ccode)
-            navigate(`/student/courses/${ccode}/overview`)
+        const toCourse = (id, title) => {
+            sessionStorage.setItem("ccode", id)
+            sessionStorage.setItem("ctitle", title)
+            navigate(`/student/courses/${id}/overview`)
         }
 
         enrolledCourses.map((course) => {
             courseComponents.push(
-                <button className="tab" onClick={() => toCourse(course.code)}>
+                <button className="tab" onClick={() => toCourse(course.code, course.title)}>
                     <h3>{course.code}</h3>
                     <h3>{course.title}</h3>
                 </button>
