@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 import './App.css';
 import Login from './pages/misc/Login/Login.js'
+import HomepageS from './pages/student/Homepage/HomepageS'
 import ChangePassword from './pages/admin/changePassword/changePassword';
 import CreateCourse from './pages/admin/createCourse/createCourse';
 import Enroll from './pages/admin/enroll/enroll'
@@ -16,6 +17,7 @@ function App() {
       <Router>
           <Routes>
               <Route path="/" element={<Login />}/>
+              <Route path="/student/" element={(<HomepageS />)} />
               <Route path="/admin/changepassword" element={<ChangePassword />}/>
               <Route path="/admin/createcourse" element={<CreateCourse/>}/>
               <Route path="/admin/enroll" element={<Enroll/>}/>
