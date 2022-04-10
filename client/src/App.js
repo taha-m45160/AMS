@@ -15,6 +15,7 @@ import CourseOverview from './pages/student/courses/overview/overview'
 import Resources from './pages/student/courses/resources/resources'
 import TeacherHomepage from './pages/teachers/Homepage/HomepageT'
 import TeacherCourses from './pages/teachers/Courses/teachercourses'
+import TeacherCourseOverview from './pages/teachers/Courses/overview/overview';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               <Route path="/parent/" element={(<HomepageP />)}/>
               <Route path="/teacher/" element={(<TeacherHomepage />)} />
               <Route path="/teacher/courses" element={(<TeacherCourses />)} />
+              <Route path="/teacher/courses/CS-300/overview" element={(<TeacherCourseOverview />)} />
           
           </Routes>
       </Router>
