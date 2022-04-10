@@ -11,6 +11,7 @@ async function createAssignment(title, section_id, course_id, term, year, deadli
     const assignment = await Assignment.create({
         title: title,
         section: section._id,
+        date_created: new Date(),
         deadline: deadline
     })
     if(attachment)

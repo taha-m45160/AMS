@@ -5,7 +5,7 @@ async function populateQuizzes(){
         {
             qs_number: 1,
             qs_type: 'MCQ',
-            qs_text: `What does a dummy-variable regression analysis examine?
+            text: `What does a dummy-variable regression analysis examine?
             (A) The relationship between one continuous dependent and one continuous independent variable     
             (B) The relationship between one categorical dependent and one continuous independent variable     
             (C) The relationship between one continuous dependent and one categorical independent variable
@@ -15,7 +15,7 @@ async function populateQuizzes(){
         {
             qs_number: 2,
             qs_type: 'MCQ',
-            qs_text: `Who is the project champion of the group?
+            text: `Who is the project champion of the group?
             (A) Samee Arif     
             (B) Bilal Shahid     
             (C) Muhammad Taha
@@ -25,7 +25,7 @@ async function populateQuizzes(){
         {
             qs_number: 3,
             qs_type: 'Short',
-            qs_text: `Describe Pakistan's foreign relations with Bangladesh`
+            text: `Describe Pakistan's foreign relations with Bangladesh`
         }
     ]
 
@@ -34,6 +34,8 @@ async function populateQuizzes(){
     var month = d.getMonth();
     var day = d.getDate();
     var openDate = new Date(year, month, day+10);
+
+    console.log(`Making 'quizzes' entries...`)
 
     await createQuiz('Quiz 1', 1, 'CS-100', 'Fall', 2022, questions, openDate, 15)
     await createQuiz('Quiz 1', 2, 'CS-100', 'Fall', 2022, questions, openDate, 15)

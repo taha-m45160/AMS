@@ -8,6 +8,14 @@ async function createGradebook(student_id, section_id, course_id, term, year, co
         term: term, 
         year: year
     })
+    
+    const validate = await mongoose.connection.db.collection('takes').findOne({
+        student_ID: student_id,
+        section: section._id
+    })
+    if(!validate)
+        throw new Error('Invalid student ID. Student must be enrolled in section.')
+        
     const gradebook = await Gradebook.create({
         student_ID: student_id,
         section: section._id,

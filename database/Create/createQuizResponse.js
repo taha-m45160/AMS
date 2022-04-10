@@ -8,6 +8,14 @@ async function createQuizResponse(student_id, title, section_id, course_id, term
         term: term, 
         year: year
     })
+
+    const validate = await mongoose.connection.db.collection('takes').findOne({
+        student_ID: student_id,
+        section: section._id
+    })
+    if(!validate)
+        throw new Error('Invalid student ID. Student must be enrolled in section.')
+        
     const quiz = await mongoose.connection.db.collection('quizzes').findOne({
         title: title,
         section: section._id

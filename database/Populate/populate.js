@@ -26,4 +26,4 @@ async function populate(){
     await populateGradebook();
 }
 
-module.exports = {populate}
+module.exports = populate

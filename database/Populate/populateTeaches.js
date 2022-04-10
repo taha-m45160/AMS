@@ -1,6 +1,8 @@
 const {createTeaches} = require('../Create/createTeaches')
 
 async function populateTeaches (){
+
+    console.log(`Making 'teaches' entries...`)
     
     await createTeaches('urwa.hassan', 1, 'CS-100', 'Fall', 2022)
     await createTeaches('urwa.hassan', 1, 'CS-200', 'Fall', 2022)

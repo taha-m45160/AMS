@@ -1,5 +1,5 @@
 const {createUser} = require('../Create/createUser')
-const crypto = require('crypto');
+const {createHash} = require('crypto');
 
 async function populateUsers(){
     
@@ -7,6 +7,8 @@ async function populateUsers(){
     const studentPassword = createHash('sha256').update('student123').digest('hex')
     const teacherPassword = createHash('sha256').update('teacher123').digest('hex')
     const parentPassword = createHash('sha256').update('parent123').digest('hex')
+
+    console.log(`Making 'users' entries...`)
 
     await createUser('mutahar.ali', 'Mutahar', undefined, 'Ali', 'mutahar.ali@gmail.com', 'Admin', adminPassword)
     await createUser('samee.arif', 'Samee', undefined, 'Arif', 'samee.arif@gmail.com', 'Admin', adminPassword)
