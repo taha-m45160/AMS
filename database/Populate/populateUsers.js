@@ -1,14 +1,60 @@
 const {createUser} = require('../Create/createUser')
+const {readFileLineByLine} = require('./util')
 const crypto = require('crypto');
 
 async function populateUsers(){
-
-    console.log(`Making 'users' entries...`)
+    
     await createUser('mutahar.ali', 'Mutahar', undefined, 'Ali', 'mutahar.ali@gmail.com', 'Admin', 'admin123')
     await createUser('samee.arif', 'Samee', undefined, 'Arif', 'samee.arif@gmail.com', 'Admin', 'admin123')
     await createUser('faizan.elahi', 'Faizan', undefined, 'Elahi', 'fazian.elahi@gmail.com', 'Admin', 'admin123')
     await createUser('bilal.shahid', 'Muhammad', 'Bilal', 'Shahid', 'bilal.shahid@gmail.com', 'Admin', 'admin123')
-    await createUser('m.taha', 'Muhammmad', undefined, 'Taha', 'm.taha@gmail.com', 'Admin', 'admin123')
+    await createUser('m.taha', 'Muhammmad', undefined, 'Taha', 'm.taha@gmail.com', 'Admin', 'admin123') 
+
+    
+    await createUser('shaheer.alam', 'Shaheer' , undefined, 'Alam', 'shaheer.alam@gmail.com', 'Teacher', 'teacher123')
+    await createUser('moeez.butt', 'Moeez' , undefined, 'Butt', 'moeez.butt@gmail.com', 'Teacher', 'teacher123')
+    await createUser('hassan.raza', 'Hassan' , undefined, 'Raza', 'hassan.raza@gmail.com', 'Teacher', 'teacher123')
+    await createUser('rohail.daud', 'Rohail' , 'Aslam', 'Daud', 'rohail.daud@gmail.com', 'Teacher', 'teacher123')
+    await createUser('mursal.akhtar', 'Mursal' , undefined, 'Akhtar', 'mursal.akhtar@gmail.com', 'Teacher', 'teacher123')
+
+    await createUser('23100000', 'Hamza', undefined, 'Mushtaq', 'hamza.mushtaq@gmail.com', 'Student', 'student123')
+    await createUser('23100001', 'Sarmad', undefined, 'Sabir', 'sarmad.sabir@gmail.com', 'Student', 'student123')
+    await createUser('23100002', 'Unss', undefined, 'Iqbal', 'unss.iqbal@gmail.com', 'Student', 'student123')
+    await createUser('23100003', 'Hamza', undefined, 'Aqeel', 'hamza.aqeel@gmail.com', 'Student', 'student123')
+    await createUser('23100004', 'Obaidullah', undefined, 'Omer', 'obaidullah.omer@gmail.com', 'Student', 'student123')
+    await createUser('23100005', 'Arslan', undefined, 'Rizwan', 'arslan.rizwan@gmail.com', 'Student', 'student123')
+    await createUser('23100006', 'Ghulam', undefined, 'Mustafa', 'ghulam.mustafa@gmail.com', 'Student', 'student123')
+    await createUser('23100007', 'Sualeh', undefined, 'Zafar', 'sualeh.zafar@gmail.com', 'Student', 'student123')
+    await createUser('23100008', 'Ali', undefined, 'Mehdi', 'ali.mehdi@gmail.com', 'Student', 'student123')
+    await createUser('23100009', 'Zeerak', undefined, 'Khan', 'zeerak.khan@gmail.com', 'Student', 'student123')
+    await createUser('23100010', 'Soud', 'Abdul', 'Rauf', 'soud.rauf@gmail.com', 'Student', 'student123')
+    await createUser('23100011', 'Abdullah', undefined, 'Khan', 'abdullah.khan@gmail.com', 'Student', 'student123')
+    await createUser('23100012', 'Muhammad', undefined, 'Hassnain', 'muhammad.hassnain@gmail.com', 'Student', 'student123')
+    await createUser('23100013', 'Taimoor', undefined, 'Arif', 'taimoor.arif@gmail.com', 'Student', 'student123')
+    await createUser('23100014', 'Taha', undefined, 'Zakir', 'taha.zakir@gmail.com', 'Student', 'student123')
+    await createUser('23100015', 'Shehryar', undefined, 'Khalid', 'shehryar.khalid@gmail.com', 'Student', 'student123')
+    await createUser('23100016', 'Hamza', undefined, 'Khalid', 'hamza.khalid@gmail.com', 'Student', 'student123')
+    await createUser('23100017', 'Faizan', undefined, 'Raza', 'faizan.raza@gmail.com', 'Student', 'student123')
+    await createUser('23100018', 'Abdullah', undefined, 'Nazir', 'abdullah.nazir@gmail.com', 'Student', 'student123')
+    await createUser('23100019', 'Maaz', undefined, 'Elahi', 'maaz.elahi@gmail.com', 'Student', 'student123')
+
+    await createUser('mushtaq.dogar', 'Mushtaq', undefined, 'Dogar', 'mushtaq.dogar@gmail.com', 'Parent', 'parent123', [23100000])
+    await createUser('sabir.nazar', 'Sabir', undefined, 'Nazar', 'sabir.nazar@gmail.com', 'Parent', 'parent123', [23100001])
+    await createUser('sheikh.iqbal', 'Sheikh', undefined, 'Iqbal', 'sheikh.iqbal@gmail.com', 'Parent', 'parent123', [23100002])
+    await createUser('omer.khan', 'Omer', undefined, 'Khan', 'omer.khan@gmail.com', 'Parent', 'parent123', [23100003, 23100004])
+    await createUser('rizwan.aslam', 'Rizwan', undefined, 'Aslam', 'rizwan.aslam@gmail.com', 'Parent', 'parent123', [23100005])
+    await createUser('mustafa.zahid', 'Mustafa', undefined, 'Zahid', 'mustafa.zahid@gmail.com', 'Parent', 'parent123', [23100006])
+    await createUser('zafar.mehmood', 'Zafar', undefined, 'Mehmood', 'zafar.mehmood@gmail.com', 'Parent', 'parent123', [23100007])
+    await createUser('junaid.khan', 'Junaid', undefined, 'Khan', 'junaid.khan@gmail.com', 'Parent', 'parent123', [23100009])
+    await createUser('rauf.ahmed', 'Rauf', undefined, 'Ahmed', 'rauf.ahmed@gmail.com', 'Parent', 'parent123', [23100010])
+    await createUser('siddique.tahir', 'Siddique', undefined, 'Tahir', 'siddique.tahir@gmail.com', 'Parent', 'parent123', [23100011])
+    await createUser('arif.sameer', 'Arif', undefined, 'Sameer', 'arif.sameer@gmail.com', 'Parent', 'parent123', [23100013])
+    await createUser('khalid.mehmood', 'Khalid', undefined, 'Mehmood', 'khalid.mehmood@gmail.com', 'Parent', 'parent123', [23100015,23100016])
+    await createUser('zakir.ashraf', 'Zakir', undefined, 'Ashraf', 'zakir.ashraf@gmail.com', 'Parent', 'parent123', [23100012, 23100014])
+    await createUser('raza.ali', 'Raza', undefined, 'Ali', 'raza.ali@gmail.com', 'Parent', 'parent123', [23100017])
+    await createUser('nazir.bilal', 'Nazir', undefined, 'Bilal', 'nazir.bilal@gmail.com', 'Parent', 'parent123', [23100018])
+    await createUser('mehdi.hussain', 'Mehdi', undefined, 'Hussain', 'mehdi.hussain@gmail.com', 'Parent', 'parent123', [23100008])
+    await createUser('elahi.jamshed', 'Elahi', undefined, 'Jamshed', 'elahi.jamshed@gmail.com', 'Parent', 'parent123', [23100019])
 }
 
 module.exports = {populateUsers}
