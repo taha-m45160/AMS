@@ -1,29 +1,33 @@
 import "./changePassword.css";
 import axios from "axios";
-import { useNavigate } from "react-router";
 import { useFormik } from "formik";
 import searchIcon from "../../../images/search.png";
 import Navbar from "../../../components/Navbar/Navbar";
 
-// TO DO:
-// Response Error Handling
-// Navigation
-// History
-
 export default function ChangePassword() {
-  // const navigate = useNavigate();
 
+  async function hash(string) {
+    const utf8 = new TextEncoder().encode(string);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray
+      .map((bytes) => bytes.toString(16).padStart(2, '0'))
+      .join('');
+    return hashHex;
+  }
+
+  axios.defaults.withCredentials = true; 
   const formik = useFormik({
     initialValues: {
       roll: "",
       pass: "",
     },
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
+      let password = await hash(values.pass)
       axios
         .post(
-          "https://d42ee15d-01be-46e2-b17f-ea13beef724b.mock.pstmn.io/changepwd",
-          values
-          // {withCredentials: true}
+          "http://localhost:8000/admin/changePassword",
+          {ID: values.roll, password: password}
         )
         .then((res) => {
           console.log(res);
@@ -51,7 +55,7 @@ export default function ChangePassword() {
               type="text"
               onChange={formik.handleChange}
               value={formik.values.roll}
-              placeholder="enter student roll number"
+              placeholder="Enter ID"
             />
           </div>
 
@@ -65,7 +69,7 @@ export default function ChangePassword() {
               type="text"
               onChange={formik.handleChange}
               value={formik.values.pass}
-              placeholder="enter new password"
+              placeholder="Enter new password"
             />
           </div>
           <br />

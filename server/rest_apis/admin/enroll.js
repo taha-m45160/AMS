@@ -1,4 +1,4 @@
-const {createUser} = require('../../database/Create/createUser')
+const {createUser} = require('../../../database/Create/createUser')
 
 async function enroll(req, res){
     try{

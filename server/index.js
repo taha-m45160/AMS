@@ -10,7 +10,8 @@ connect(uri);
 
 // rest apis
 const {login} = require('./rest_apis/login')
-const {enroll} = require('./rest_apis/enroll')
+const {enroll} = require('./rest_apis/admin/enroll')
+const {changePassword} = require('./rest_apis/admin/changePassword')
 
 const PORT = process.env.PORT || 8000
 
@@ -26,6 +27,10 @@ app.options('*', cors(corsConfig));
 
 app.post('/login', async (req, res) => {
     await login(req, res)
+})
+
+app.post('/admin/changePassword', (authenticateUser), async (req, res) => {
+    await changePassword(req, res)
 })
 
 app.post('/admin/enroll', (authenticateUser), async (req, res) => {

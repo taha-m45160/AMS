@@ -1,11 +1,11 @@
-import "./enroll.css";
+import "./createAccount.css";
 import axios from "axios";
 import Navbar from "../../../components/Navbar/Navbar";
 import { useNavigate } from "react-router";
 import { useFormik } from "formik";
 
 
-export default function Enroll() {
+export default function CreateAccount() {
     // const navigate = useNavigate();
   
     const formik = useFormik({

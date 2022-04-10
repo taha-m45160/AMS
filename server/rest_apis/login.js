@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 async function login(req, res){
     try{
         const user = await mongoose.connection.db.collection('users').findOne({
-            ID: parseInt(req.body.ID)
+            ID: req.body.ID
         })
         if (user.password === req.body.password){
             const token = createToken(req.body.ID+"|"+user.role)

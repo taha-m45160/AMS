@@ -6,21 +6,20 @@ import axios from 'axios';
 const HomebarA = () => {
 
     const navigate = useNavigate();
-    const [errMsg, setErrMsg] = React.useState('')
 
     const changePass = (ev) => {
         ev.preventDefault();
-        navigate('/admin/change-password');
+        navigate('/admin/changePassword');
     }
 
     const createCourse = (ev) => {
         ev.preventDefault();
-        navigate('/admin/create-course');
+        navigate('/admin/createCourse');
     }
 
     const registerAccount = (ev) => {
         ev.preventDefault();
-        navigate('/admin/register-account');
+        navigate('/admin/createAccount');
     }
 
     return (
