@@ -14,10 +14,10 @@ async function populateUsers(){
     await createUser('bilal.shahid', 'Muhammad', 'Bilal', 'Shahid', 'bilal.shahid@gmail.com', 'Admin', adminPassword)
     await createUser('m.taha', 'Muhammmad', undefined, 'Taha', 'm.taha@gmail.com', 'Admin', adminPassword) 
 
-    await createUser('urwar.hassan', 'Urwa' , undefined, 'Hassan', 'urwar.hassan@gmail.com', 'Teacher', teacherPassword)
+    await createUser('urwa.hassan', 'Urwa' , undefined, 'Hassan', 'urwa.hassan@gmail.com', 'Teacher', teacherPassword)
     await createUser('mahira.khan', 'Mahira' , undefined, 'Khan', 'mahira.khan@gmail.com', 'Teacher', teacherPassword)
     await createUser('hassan.raza', 'Hassan' , undefined, 'Raza', 'hassan.raza@gmail.com', 'Teacher', teacherPassword)
-    await createUser('Raheela.Sharif', 'Raheela' , 'Aslam', 'Sharif', 'raheela.sharif@gmail.com', 'Teacher', teacherPassword)
+    await createUser('raheela.sharif', 'Raheela' , 'Aslam', 'Sharif', 'raheela.sharif@gmail.com', 'Teacher', teacherPassword)
     await createUser('mursal.akhtar', 'Mursal' , undefined, 'Akhtar', 'mursal.akhtar@gmail.com', 'Teacher', teacherPassword)
 
     await createUser('23100000', 'Humaira', undefined, 'Mushtaq', 'humaira.mushtaq@gmail.com', 'Student', studentPassword)
