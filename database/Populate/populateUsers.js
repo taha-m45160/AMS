@@ -33,7 +33,7 @@ async function populateUsers(){
     let users = {}
 
     const roles = ['Student', 'Parent', 'Teacher']
-    qty = {'Student': 99, 'Teacher': 25, 'Parent': 99}
+    qty = {'Student': 10, 'Teacher': 5, 'Parent': 10}
 
     for(i=0; i<3; i++){
         let role = roles[i];

@@ -26,7 +26,7 @@ async function populate(){
     // await createSection(2, 'CS-200', 'Fall', 2021)
 
     // console.log(`Making 'takes' entries...`)
-    // await createTakes(23100222, 1, 'CS-100', 'Fall', 2021)
+    await createTakes(24100002, 1, 'CS-100', 'Fall', 2021)
     
     // console.log(`Making 'teaches' entries...`)
     // await createTeaches(23100088, 1, 'CS-100', 'Fall', 2021)

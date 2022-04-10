@@ -1,11 +1,12 @@
 const express = require('express')
-const fs = require('fs')
 const app = express()
-const {createHash} = require('crypto')
 const path = require('path')
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
-const {createToken, authenticateUser} = require('./auth.js')
+const {authenticateUser} = require('./auth.js')
+const {connect} = require('./util')
+const uri = "mongodb+srv://mutahar789:Hello0985@ams.qh2kz.mongodb.net/AMS?retryWrites=true&w=majority"
+connect(uri);
 
 // rest apis
 const {login} = require('./rest_apis/login')
@@ -16,17 +17,18 @@ const PORT = process.env.PORT || 8000
 app.use(express.json())
 app.use(express.static(path.resolve(__dirname, '../client/build')))
 app.use(cookieParser())
-app.use(cors({
-    methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
+const corsConfig = {
+    origin: true,
     credentials: true
-}))
+}
+app.use(cors(corsConfig))
+app.options('*', cors(corsConfig));
 
 app.post('/login', async (req, res) => {
-    login(req, res)
+    await login(req, res)
 })
 
 app.post('/admin/enroll', (authenticateUser), async (req, res) => {
-    // front end sends hashed password
     enroll(req, res)
 })
 

@@ -1,10 +1,10 @@
-const {createToken, authenticateUser} = require('../auth.js')
+const {createToken} = require('../auth.js')
 const mongoose = require('mongoose')
 
-function login(req, res){
+async function login(req, res){
     try{
         const user = await mongoose.connection.db.collection('users').findOne({
-            ID: req.body.ID
+            ID: parseInt(req.body.ID)
         })
         if (user.password === req.body.password){
             const token = createToken(req.body.ID+"|"+user.role)

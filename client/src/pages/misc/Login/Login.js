@@ -5,7 +5,7 @@ const axios = require('axios')
 
 const Login = () => {
     const navigate = useNavigate();
-
+    axios.defaults.withCredentials = true; 
     const [userID, setUserID] = React.useState(``)
     const [Pw, setPw] = React.useState(``)
     const [errMsg, setErrMsg] = React.useState('')
@@ -14,12 +14,12 @@ const Login = () => {
         ev.preventDefault()
         if(userID && Pw){
             const info = {
-                id : userID,
+                ID : userID,
                 password : Pw
             }
             try{
-                const res = await axios.post('http://localhost:8000/login', info, {withCredentials: true});
-                navigate(`/${res.data.userType}/Home`)
+                const res = await axios.post('http://localhost:8000/login', info);
+                // navigate(`/${res.data.userType}/Home`)
             } catch (err) {
                 setErrMsg('User ID or password is incorrect')
             }
