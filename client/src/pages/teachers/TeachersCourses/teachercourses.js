@@ -1,30 +1,57 @@
-import React from 'react';
+import "./teachercourses.css";
+import axios from "axios";
 import {useNavigate} from 'react-router-dom';
-import './teachercourses.css'
+import Navbar from "../../../components/Navbar/Navbar";
 
-const teachercourses = () => {
+
+export default function TeacherCourses() {
+    const navigate = useNavigate();
+
+    const displayCourses = () => {
+        // try {
+        //     const enrolledCourses = await axios.get('http://localhost:8000/teacher/courses')
+        // } catch (err) {
+        //     console.log(err)
+        // }
+
+        const enrolledCourses = [
+            {code:'CS-300', title:'Advanced Programming'}, 
+            {code:'CS-582', title:'Distributed Systems'},
+            {code:'CS-535', title:'Machine Learning'},
+            {code:'CS-473', title:'Network Security'},
+            {code:'CS-310', title:'Algorithms'}
+        ]
+        const courseComponents = []
+
+        const toCourse = (id, title) => {
+            sessionStorage.setItem("ccode", id)
+            sessionStorage.setItem("ctitle", title)
+            navigate(`/teacher/courses/${id}/overview`)
+        }
+
+        enrolledCourses.map((course) => {
+            courseComponents.push(
+                <button className="tab" onClick={() => toCourse(course.code, course.title)}>
+                    <h3>{course.code}</h3>
+                    <h3>{course.title}</h3>
+                </button>
+            )
+        })
+
+        return courseComponents
+    }
+
     return (
-    <div className = "container">
+        <div className="courses">
+            <Navbar/>
 
-    <div className ="box-1">
-    <h1>Academics Management System </h1>
-    </div>
-    
+            <h1>Courses</h1>
 
-    <div className = "heading">
-        <h2> You are currently teaching the following courses: </h2> 
-    </div>
-
-    <div className = "boxes">
-        <div className = "box-2"> 
-        <h2> Chemistry S1 </h2>
+            <div className="course-tabs">
+                {displayCourses().map((comp) => {
+                    return comp
+                })}
+            </div>
         </div>
-
-        <div className = "box-2"> 
-            <h2> Chemistry S2 </h2>
-        </div>
-    </div>
-
-</div>
-    )
+    );
 }

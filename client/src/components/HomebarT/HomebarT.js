@@ -1,20 +1,33 @@
 import React from 'react'
+import {useNavigate} from 'react-router-dom';
 import './HomebarT.css'
+import Welcome from '../../images/Welcome.png'
+import Courses from '../../images/Current Courses.png'
+import Announcements from '../../images/Announcements.png'
+
 
 const Homebar = () => {
+    const navigate = useNavigate();
+
+    const toCourses = () => {
+        navigate(`/teacher/courses`)
+    }
+
     return (
         <div className='bar'>
             <ul className='bar-container'>
                 <li className='item'>
-                    <img src={require('../../images/Welcome.png')} width="50px"/>
+                    <img src={Welcome} alt="Welcome"/>
                     <a href="HOME-PAGE">Welcome</a>
                 </li>
+                
                 <li className='item'>
-                <img src={require('../../images/Current Courses.png')} width="50px"/>
-                    <a href="CURRENT-COURSES">Current Courses</a>
+                    <img src={Courses} alt="Courses"/>
+                    <button onClick={() => toCourses()}>Courses</button>
                 </li>
+                
                 <li className='item'>
-                <img src={require('../../images/Announcements.png')} width="50px"/>
+                    <img src={Announcements} alt="Announcements"/>
                     <a href="ANNOUNCEMENTS">Announcements</a>
                 </li>
             </ul>
