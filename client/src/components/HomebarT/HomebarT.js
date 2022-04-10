@@ -1,5 +1,4 @@
 import React from 'react'
-import {useNavigate} from 'react-router-dom';
 import './HomebarT.css'
 import Welcome from '../../images/Welcome.png'
 import Courses from '../../images/Current Courses.png'
@@ -7,12 +6,6 @@ import Announcements from '../../images/Announcements.png'
 
 
 const Homebar = () => {
-    const navigate = useNavigate();
-
-    const toCourses = () => {
-        navigate(`/teacher/courses`)
-    }
-
     return (
         <div className='bar'>
             <ul className='bar-container'>
