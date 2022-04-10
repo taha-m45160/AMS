@@ -1,0 +1,30 @@
+.text{
+    text-align: center;
+    margin-top: 8%;
+    margin-left: 20%;
+}
+
+.logo{
+    margin-left: 20%;
+    margin-top: 3%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.logo img{
+    width: 300px;
+    margin-top: 0%;
+    align-items: center;
+}
+
+.text-tutorial{
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 20%;
+}
+
+.text-tutorial a{
+    font-size: 1em;
+}
+
