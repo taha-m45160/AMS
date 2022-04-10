@@ -6,19 +6,19 @@ const Homebar = () => {
         <div className='bar'>
             <ul className='bar-container'>
                 <li className='item'>
-                    <img src={require('../../images/Welcome.png')}/>
+                    <img src={require('../../images/Welcome.png')} width="50px"/>
                     <a href="HOME-PAGE">Welcome</a>
                 </li>
                 <li className='item'>
-                <img src={require('../../images/Current Courses.png')}/>
+                <img src={require('../../images/Current Courses.png')} width="50px"/>
                     <a href="CURRENT-COURSES">Current Courses</a>
                 </li>
                 <li className='item'>
-                <img src={require('../../images/Announcements.png')}/>
+                <img src={require('../../images/Announcements.png')} width="50px"/>
                     <a href="ANNOUNCEMENTS">Announcements</a>
                 </li>
                 <li className='item'>
-                    <img src={require('../../images/Calendar.png')}/>
+                    <img src={require('../../images/Calendar.png')} width="50px"/>
                     <a href="CALENDAR">Calendar</a>
                 </li>
             </ul>
