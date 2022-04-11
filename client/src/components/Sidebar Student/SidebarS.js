@@ -8,24 +8,24 @@ const SidebarS = () => {
         <div className='bar'>
             <ul className='bar-container'>
                 <li className='item'>
-                    <img src={require('../../images/Outline.png')}/>
+                    <img src={require('../../images/Resources.png')}/>
                     <a href="OUTLINE">Outline</a>
                 </li>
                 <li className='item'>
                 <img src={require('../../images/Resources.png')}/>
-                    <a href="RESOURSES">Resourses</a>
+                    <a href="/teacher/courses/CS-300/resources">Resources</a>
                 </li>
                 <li className='item'>
                 <img src={require('../../images/Quizzes.png')}/>
-                    <a href="QUIZZES">Quizzes</a>
+                    <a href="/teacher/courses/CS-300/quizzes">Quizzes</a>
                 </li>
                 <li className='item'>
                     <img src={require('../../images/Assignments.png')}/>
-                    <a href="ASSIGNMENTS">Assignments</a>
+                    <a href="/teacher/courses/CS-300/assignments">Assignments</a>
                 </li>
                 <li className='item'>
-                    <img src={require('../../images/Calendar.png')}/>
-                    <a href="GRADEBOOK">Gradebook</a>
+                    <img src={require('../../images/Gradebook.png')}/>
+                    <a href="/teacher/courses/CS-300/gradebook">Gradebook</a>
                 </li>
             </ul>
         </div>

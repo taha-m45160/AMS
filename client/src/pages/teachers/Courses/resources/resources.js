@@ -6,7 +6,7 @@ import Navbar from "../../../../components/Navbar/Navbar";
 // TODO:
 // SORT OUT FOLDERS AND FILES ISSUE
 
-export default function Resources() {
+export default function TeacherResources() {
     const ccode = sessionStorage.getItem("ccode")
     const ctitle = sessionStorage.getItem("ctitle")
 

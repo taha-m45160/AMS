@@ -8,29 +8,11 @@ import axios from 'axios';
 
 
 const Homebar = () => {
-
     const navigate = useNavigate();
     const [errMsg, setErrMsg] = React.useState('')
 
-    const viewCourses = async (ev) => {
-        ev.preventDefault();
-        try{
-            const res = await axios.get('http://localhost:8000/', {withCredentials: true});
-            if(res.data.courses.length === 0){
-                setErrMsg("No course");
-            }
-            else{
-                navigate('/student/courses', {state: {
-                    courses: res.data.courses,
-                    userType: "teacher"
-                }})
-            }
-        }
-        catch(err){
-            if(err.response){
-                setErrMsg(err.response.statusText)
-            }
-        }
+    const viewCourses = () => {
+        navigate('/teacher/courses')
     }
 
     const viewAnnouncemnets = async (ev) => {

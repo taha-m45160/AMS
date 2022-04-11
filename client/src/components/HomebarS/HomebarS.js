@@ -63,7 +63,7 @@ const Homebar = () => {
                 setErrMsg("No calendar");
             }
             else{
-                navigate('/student/clendar', {state: {
+                navigate('/student/calendar', {state: {
                     calendar: res.data.calendar,
                     userType: "student"
                 }})

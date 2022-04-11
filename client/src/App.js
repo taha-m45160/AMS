@@ -19,6 +19,10 @@ import Resources from './pages/student/courses/resources/resources'
 import TeacherHomepage from './pages/teachers/Homepage/HomepageT'
 import TeacherCourses from './pages/teachers/Courses/teachercourses'
 import TeacherCourseOverview from './pages/teachers/Courses/overview/overview';
+import TeacherResources from './pages/teachers/Courses/resources/resources';
+import TeacherQuizzes from './pages/teachers/Courses/quizzes/quizzes'
+import TeacherAssignments from './pages/teachers/Courses/assignments/assignments'
+import TeacherGradebook from './pages/teachers/Courses/gradebook/gradebook'
 
 function App() {
   return (
@@ -40,6 +44,10 @@ function App() {
               <Route path="/teacher/" element={(<TeacherHomepage />)} />
               <Route path="/teacher/courses" element={(<TeacherCourses />)} />
               <Route path="/teacher/courses/CS-300/overview" element={(<TeacherCourseOverview />)} />
+              <Route path="/teacher/courses/CS-300/resources" element={(<TeacherResources />)} />
+              <Route path="/teacher/courses/CS-300/quizzes" element={(<TeacherQuizzes />)} />
+              <Route path="/teacher/courses/CS-300/assignments" element={(<TeacherAssignments />)} />
+              <Route path="/teacher/courses/CS-300/gradebook" element={(<TeacherGradebook />)} />
           
           </Routes>
       </Router>
