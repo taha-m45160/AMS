@@ -7,7 +7,7 @@ import Login from './pages/misc/Login/Login.js'
 import HomepageA from './pages/admin/Homepage/HomepageA'
 import ChangePassword from './pages/admin/changePassword/changePassword'
 import CreateCourse from './pages/admin/createCourse/createCourse'
-import CreateAccount from './pages/admin/createAccount/createAccount'
+import Enroll from './pages/admin/enroll/enroll'
 
 import HomepageS from './pages/student/Homepage/HomepageS'
 import HomepageP from './pages/parents/Homepage/HomepageP'
@@ -30,7 +30,7 @@ function App() {
               <Route path="/admin/" element={(<HomepageA />)}/>
               <Route path="/admin/changePassword" element={<ChangePassword />}/>
               <Route path="/admin/createCourse" element={<CreateCourse/>}/>
-              <Route path="/admin/createAccount" element={<CreateAccount/>}/>
+              <Route path="/admin/enroll" element={<Enroll/>}/>
 
               <Route path="/student/" element={(<HomepageS />)} />
               <Route path="/student/courses" element={<Courses/>}/>

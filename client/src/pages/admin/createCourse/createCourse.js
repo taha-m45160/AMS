@@ -7,7 +7,7 @@ import { useFormik } from "formik";
 
 export default function CreateCourse() {
     // const navigate = useNavigate();
-  
+    axios.defaults.withCredentials = true; 
     const formik = useFormik({
       initialValues: {
         ccode: "",
@@ -16,9 +16,8 @@ export default function CreateCourse() {
       onSubmit: (values) => {
         axios
           .post(
-            "https://d42ee15d-01be-46e2-b17f-ea13beef724b.mock.pstmn.io/changepwd",
+            "http://localhost:8000/admin/createCourse",
             values
-            // {withCredentials: true}
           )
           .then((res) => {
             console.log(res);
