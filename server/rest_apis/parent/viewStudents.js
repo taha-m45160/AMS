@@ -3,7 +3,7 @@ const sanitize = require("mongo-sanitize")
 
 async function viewStudents () {
         try{
-            const parent = await mongoose.connection.db.collection('users').find({
+            const parent = await mongoose.connection.db.collection('users').findOne({
                 ID: res.ID
             })
 

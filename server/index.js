@@ -15,6 +15,7 @@ const {changePassword} = require('./rest_apis/admin/changePassword')
 const {create_course} = require('./rest_apis/admin/createCourse')
 const {viewAnnouncements} = require('./rest_apis/parent/viewAnnouncements.js')
 const {viewStudents} = require('./rest_apis/parent/viewStudents.js')
+const {viewTakes} = require('./rest_apis/parent/viewTakes.js')
 
 const PORT = process.env.PORT || 8000
 
@@ -55,6 +56,11 @@ app.post('./parent/announcements', (authenticateUser), async (req, res) => {
 app.post('./parent/students', (authenticateUser), async (req,res) => {
     await viewStudents(req, res)
 })
+
+app.post('./parent/studentTakes', (authenticateUser), async (req,res) => {
+    await viewTakes(req, res)
+})
+
 
 app.get('./logout', (req, res) => {
     res.cookie('jwt', '', {maxAge:1})
