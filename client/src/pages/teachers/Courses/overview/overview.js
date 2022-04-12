@@ -2,10 +2,10 @@ import "./overview.css";
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from "../../../../components/Navbar/Navbar";
-import SidebarS from "../../../../components/Sidebar Student/SidebarS"
+import Sidebar from "../../../../components/Sidebar Teacher/SidebarT"
 
 export default function TeacherCourseOverview() {
-    const ccode = sessionStorage.getItem("course")
+    const ccode = sessionStorage.getItem("ccode")
 
     const getTitle = () => {
         // try {
@@ -89,7 +89,7 @@ export default function TeacherCourseOverview() {
     return (
         <div className="course-overview">
             <Navbar />
-            <SidebarS />
+            <Sidebar />
             {displayOverview()}
         </div>
     );

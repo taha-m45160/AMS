@@ -17,7 +17,7 @@ import Courses from './pages/student/courses/courses'
 import CourseOverview from './pages/student/courses/overview/overview'
 import Resources from './pages/student/courses/resources/resources'
 import TeacherHomepage from './pages/teachers/Homepage/HomepageT'
-import TeacherCourses from './pages/teachers/Courses/teachercourses'
+import TeacherCourses from './pages/teachers/TeachersCourses/teachercourses'
 import TeacherCourseOverview from './pages/teachers/Courses/overview/overview';
 import TeacherResources from './pages/teachers/Courses/resources/resources';
 import TeacherQuizzes from './pages/teachers/Courses/quizzes/quizzes'
