@@ -13,7 +13,7 @@ const {login} = require('./rest_apis/login')
 const {createAccount} = require('./rest_apis/admin/createAccount')
 const {changePassword} = require('./rest_apis/admin/changePassword')
 const {create_course} = require('./rest_apis/admin/createCourse')
-const { resourceUsage } = require('process')
+const { viewAnnouncements } = require('./rest_apis/parent/viewAnnouncements.js')
 
 const PORT = process.env.PORT || 8000
 
@@ -41,6 +41,10 @@ app.post('/admin/createAccount', (authenticateUser), async (req, res) => {
 
 app.post('/admin/createCourse', (authenticateUser), async (req, res) => {
     await create_course(req, res)
+})
+
+app.get('./parent/announcements', (authenticateUser), async (req, res) => {
+    await viewAnnouncements(req, res)
 })
 
 app.get('./logout', (req, res) => {
