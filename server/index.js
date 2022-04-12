@@ -48,11 +48,11 @@ app.post('/admin/createCourse', (authenticateUser), async (req, res) => {
 
 // Parents
 
-app.get('./parent/announcements', (authenticateUser), async (req, res) => {
+app.post('./parent/announcements', (authenticateUser), async (req, res) => {
     await viewAnnouncements(req, res)
 })
 
-app.get('./parent/students', (authenticateUser), async (req,res) => {
+app.post('./parent/students', (authenticateUser), async (req,res) => {
     await viewStudents(req, res)
 })
 
