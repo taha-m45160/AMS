@@ -23,13 +23,15 @@ import TeacherResources from './pages/teachers/Courses/resources/resources';
 import TeacherQuizzes from './pages/teachers/Courses/quizzes/quizzes'
 import TeacherAssignments from './pages/teachers/Courses/assignments/assignments'
 import TeacherGradebook from './pages/teachers/Courses/gradebook/gradebook'
+import Test from './pages/student/assignments/assignments'
 
 function App() {
   return (
     <div>
       <Router>
           <Routes>
-              <Route path="/" element={<Login />}/>
+            <Route path="/" element={<Test />}/>
+              {/* <Route path="/" element={<Login />}/> */}
 
               <Route path="/admin/" element={(<HomepageA />)}/>
               <Route path="/admin/changePassword" element={<ChangePassword />}/>
