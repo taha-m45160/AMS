@@ -13,10 +13,11 @@ const {login} = require('./rest_apis/login')
 const {createAccount} = require('./rest_apis/admin/createAccount')
 const {changePassword} = require('./rest_apis/admin/changePassword')
 const {create_course} = require('./rest_apis/admin/createCourse')
-const {viewAnnouncements} = require('./rest_apis/parent/viewAnnouncements.js')
-const {viewStudents} = require('./rest_apis/parent/viewStudents.js')
-const {viewTakes} = require('./rest_apis/parent/viewTakes.js')
-const {viewOverview} = require('./rest_apis/parent/viewOverview.js')
+const {viewAnnouncements} = require('./rest_apis/parent/viewAnnouncements')
+const {viewStudents} = require('./rest_apis/parent/viewStudents')
+const {viewTakes} = require('./rest_apis/parent/viewTakes')
+const {viewOverview} = require('./rest_apis/parent/viewOverview')
+const {viewGradebook} = require('./rest_apis/parent/viewGradebook')
 
 const PORT = process.env.PORT || 8000
 
@@ -65,6 +66,11 @@ app.post('./parent/studentTakes', (authenticateUser), async (req,res) => {
 app.post('./parent/course/overview', (authenticateUser), async (req,res) => {
     await viewOverview(req, res)
 })
+
+app.post('./parent/course/gradebook', (authenticateUser), async (req,res) => {
+    await viewGradebook(req, res)
+})
+
 
 
 app.get('./logout', (req, res) => {

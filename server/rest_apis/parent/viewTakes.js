@@ -5,7 +5,7 @@ async function viewTakes () {
         try{
             const studentID = sanitize(req.body.ID)
             const courseObjects = mongoose.connection.db.collection('takes').find({
-                ID: studentID
+                student_ID: studentID
             })
 
             res.status(200).json({
