@@ -16,6 +16,7 @@ const {create_course} = require('./rest_apis/admin/createCourse')
 const {viewAnnouncements} = require('./rest_apis/parent/viewAnnouncements.js')
 const {viewStudents} = require('./rest_apis/parent/viewStudents.js')
 const {viewTakes} = require('./rest_apis/parent/viewTakes.js')
+const {viewOverview} = require('./rest_apis/parent/viewOverview.js')
 
 const PORT = process.env.PORT || 8000
 
@@ -59,6 +60,10 @@ app.post('./parent/students', (authenticateUser), async (req,res) => {
 
 app.post('./parent/studentTakes', (authenticateUser), async (req,res) => {
     await viewTakes(req, res)
+})
+
+app.post('./parent/course/overview', (authenticateUser), async (req,res) => {
+    await viewOverview(req, res)
 })
 
 
