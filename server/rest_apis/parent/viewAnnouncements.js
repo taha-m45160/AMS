@@ -3,7 +3,7 @@ const sanitize = require("mongo-sanitize")
 
 async function viewAnnouncements () {
         try{
-            const ans = await mongoose.connection.db.collection('users')
+            const ans = await mongoose.connection.db.collection('announcements').find()
             res.status(200).json({
                 announcements: ans
             })
