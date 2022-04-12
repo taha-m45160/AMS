@@ -71,6 +71,8 @@ app.post('./parent/course/gradebook', (authenticateUser), async (req,res) => {
     await viewGradebook(req, res)
 })
 
+// Teachers
+
 
 
 app.get('./logout', (req, res) => {
