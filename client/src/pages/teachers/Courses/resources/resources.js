@@ -2,11 +2,12 @@ import "./resources.css";
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from "../../../../components/Navbar/Navbar";
+import SideBar from "../../../../components/Sidebar Teacher/SidebarT"
 
 // TODO:
 // SORT OUT FOLDERS AND FILES ISSUE
 
-export default function Resources() {
+export default function TeacherResources() {
     const ccode = sessionStorage.getItem("ccode")
     const ctitle = sessionStorage.getItem("ctitle")
 
@@ -35,6 +36,7 @@ export default function Resources() {
     return (
         <div className="resources">
             <Navbar />
+            <SideBar />
 
             <h1 className="course-title">
                 CS-300: Advanced Programming

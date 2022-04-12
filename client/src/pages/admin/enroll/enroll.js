@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 import { useFormik } from "formik";
 
 
-export default function Enroll() {
+export default function CreateAccount() {
     // const navigate = useNavigate();
   
     const formik = useFormik({

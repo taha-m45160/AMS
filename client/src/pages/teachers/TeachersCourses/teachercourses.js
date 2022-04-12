@@ -2,6 +2,7 @@ import "./teachercourses.css";
 import axios from "axios";
 import {useNavigate} from 'react-router-dom';
 import Navbar from "../../../components/Navbar/Navbar";
+import Homebar from "../../../components/HomebarT/HomebarT";
 
 
 export default function TeacherCourses() {
@@ -44,6 +45,7 @@ export default function TeacherCourses() {
     return (
         <div className="courses">
             <Navbar/>
+            <Homebar/>
 
             <h1>Courses</h1>
 

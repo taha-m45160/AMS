@@ -4,6 +4,16 @@ import './Login.css'
 import Navbar from '../../../components/Navbar/Navbar'
 const axios = require('axios')
 
+async function hash(string) {
+    const utf8 = new TextEncoder().encode(string);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray
+      .map((bytes) => bytes.toString(16).padStart(2, '0'))
+      .join('');
+    return hashHex;
+  }
+
 const Login = () => {
     const navigate = useNavigate();
     axios.defaults.withCredentials = true; 
@@ -13,14 +23,15 @@ const Login = () => {
 
     const login = async (ev) => {
         ev.preventDefault()
+        let password = await hash(Pw)
         if(userID && Pw){
             const info = {
                 ID : userID,
-                password : Pw
+                password : password
             }
             try{
                 const res = await axios.post('http://localhost:8000/login', info);
-                // navigate(`/${res.data.userType}/Home`)
+                navigate(`/${res.data.role}/`)
             } catch (err) {
                 setErrMsg('User ID or password is incorrect')
             }

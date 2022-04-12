@@ -1,1 +1,1 @@
-# AMS
+# Academics Management System
