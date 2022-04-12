@@ -1,5 +1,5 @@
-const mongoose = require("mongoose")
 const {createCourse} = require('../../database/Create/createCourse')
+const sanitize = require("mongo-sanitize")
 
 async function create_course(req, res){
     try{
