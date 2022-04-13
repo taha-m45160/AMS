@@ -1,0 +1,130 @@
+body{
+    background-color: #ffffff;
+    line-height: 1.4em;
+    margin: 0;
+}
+
+.container{
+    width: 100%; /* making the text adaptive */
+    margin: auto;  /*pushing text to middle*/
+}
+
+.box-1{
+    background-color:#0F245A;
+    color: #fff;
+    border-width: 3px; /* setting border width */
+    border-bottom-width: 5px; /* border all sides 3, but bottom 5 */
+    padding:2px;
+
+   
+    
+}
+
+.box-1 h1{
+    font-family: 'Ruda';font-size: 40px; font-weight: bold;
+    font-weight: 50;
+    font-style: normal;
+    text-align: center;
+
+    margin-top: 10px; /*adjusts h1 relative to top  */
+}
+.Heading1{
+    font-style: normal;
+    color:#f9f9f9;
+    background-color: #0F245A;
+    text-align: center;
+    width: 250px;
+    height: 30px;
+    margin-left: 40%;
+    margin-top: 3%;
+    
+}
+
+.Heading1 h2{
+    font-family: 'Ruda';font-size: 125%; font-weight: bold;
+    font-weight: 50;
+    font-style: normal;
+    text-align: center;
+    
+  }
+
+.Heading2{
+    font-style: normal;
+    color:#0F245A;
+    text-align: left;
+    margin-top: 5%;
+    margin-left:23%;
+    margin-bottom: 3%;
+}
+  .days {
+    width: 120%;
+    text-align: center;
+    margin-left:45%;
+
+  }
+  
+  .day {
+    width: 15%;
+    background-color: #efeff6;
+    padding:1%;
+    float:left;
+    margin-right:2%;
+  }
+  
+  .datelabel {
+    margin-bottom: 15%;
+  }
+  
+  .timeslot {
+    background-color: #384A78;
+    width: auto;
+    height: 20px;
+    color: white;
+    padding:5%;
+    margin-top: 5px;
+    font-size: 14px;
+    border-radius: 3px;
+    vertical-align: center;
+    text-align:center;
+  }
+  
+  .timeslot:hover { 
+    background-color: #0f0b44;
+    cursor: pointer;
+  }
+
+  .Heading3{
+    font-style: oblique;
+    color:#f9f9f9;
+    background-color: #0F245A;
+    width: 40%;
+    text-align: center;
+    margin-left: 30%;
+    margin-top: 0%;
+  }
+
+.Heading3 h3{
+    font-family: 'Ruda';font-size: 20px; font-weight: bold;
+    font-weight: 50;
+    font-style: normal;
+    text-align: center;
+}
+
+  .SendReq{
+    font-style: normal;
+    color:#f9f9f9;
+    background-color: #0F245A;
+    text-align: center;
+    width: 12%;
+    height: 15%;
+    margin-left: 70%;
+    border-radius: 1%;
+  }
+
+  .SendReq h4{
+    font-family: 'Ruda';font-size: 120%; font-weight: bold;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    vertical-align: auto;
+  }
