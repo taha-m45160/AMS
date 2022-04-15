@@ -4,7 +4,7 @@ async function createIndexes(){
     const db = await mongoose.connection.db
     await db.collection('users').createIndex({ID:1}, {unique: true})
     await db.collection('courses').createIndex({ID:1}, {unique: true})
-    await db.collection('sections').createIndex({ID: 1, course_ID: 1, term: 1, year: 1}, {unique: true})
+    await db.collection('sections').createIndex({ID: 1, course: 1, term: 1, year: 1}, {unique: true})
     await db.collection('takes').createIndex({student_ID: 1, section: 1}, {unique: true})
     await db.collection('teaches').createIndex({teacher_ID: 1, section: 1}, {unique: true})
     await db.collection('resources').createIndex({ID: 1, section: 1}, {unique: true})

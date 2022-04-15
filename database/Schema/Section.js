@@ -5,23 +5,10 @@ const sectionSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    course_ID: {
-        type: String,
-        required: true,
-        validate: {
-            validator: async function(c_id){
-                try {
-                    const result = mongoose.connection.db.collection('courses').findOne({ID: c_id})
-                    if (result)
-                        return true
-                    else
-                        return false
-                } catch(e) {
-                    return false;
-                }
-            },
-            message: 'Invalid Course ID.'
-        }
+    course: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Course',
+        required: true
     },
     term: {
         type: String,
