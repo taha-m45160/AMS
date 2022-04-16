@@ -13,7 +13,7 @@ import StudentCourses from './pages/student/courses/courses'
 
 
 //Parent
-import ParentHomepage from './pages/parents/Homepage/Homepage'
+
 
 
 
@@ -39,7 +39,7 @@ function App() {
     <div>
       <Router>
           <Routes>
-              <Route path="/" element={<ParentHomepage />}/>
+              <Route path="/" element={<Login />}/>
 
               <Route path="/admin/" element={(<AdminHomepage />)}/>
               <Route path="/admin/users" element={<ChangePassword />}/>
