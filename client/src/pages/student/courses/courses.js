@@ -98,7 +98,7 @@ export default function Courses() {
             <Navbar />
             <Homebar />
 
-            <div style={{ width: '70%', marginTop: 50, marginLeft: '25%' }}>
+            <div style={{ width: '70%', marginTop: 50, marginLeft: '28%' }}>
                 <Box
                     sx={{
                         display: 'grid',
