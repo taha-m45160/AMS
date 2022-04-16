@@ -21,20 +21,27 @@ export default function ChangePassword() {
     initialValues: {
       roll: "",
       pass: "",
+      pass_repeat: ""
     },
     onSubmit: async (values) => {
-      let password = await hash(values.pass)
-      axios
+      if (values.pass_repeat === values.pass){
+        let password = await hash(values.pass)
+        axios
         .post(
           "http://localhost:8000/admin/changePassword",
           {ID: values.roll, password: password}
         )
         .then((res) => {
-          console.log(res);
+          console.log(res.data);
         })
         .catch((err) => {
           console.log(err);
         });
+      } else {
+        console.log('Passwords donnot match')
+        // set error message
+        // display error message
+      }
     },
   });
 
@@ -66,10 +73,19 @@ export default function ChangePassword() {
             <input
               id="pass"
               name="pass"
-              type="text"
+              type="password"
               onChange={formik.handleChange}
               value={formik.values.pass}
               placeholder="Enter new password"
+            />
+            <br /> <br />
+            <input
+              id="pass_repeat"
+              name="pass_repeat"
+              type="password"
+              onChange={formik.handleChange}
+              value={formik.values.pass_repeat}
+              placeholder="Re-enter password"
             />
           </div>
           <br />

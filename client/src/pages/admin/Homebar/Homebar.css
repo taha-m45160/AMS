@@ -1,0 +1,28 @@
+.bar{
+    position: fixed;
+    border-right: 1px solid black;
+    width: 15%;
+    margin-left: 10px;
+    height: 100%;
+}
+
+.item{
+    display: flex;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    align-items: center;
+}
+
+.click-items{
+    margin-left: 10%;
+    font-size: 15;
+    font-size: 20px;
+    text-decoration: underline; 
+}
+.click-items:hover{
+    cursor: pointer;
+}
+
+.icon {
+    transform: scale(3);
+}

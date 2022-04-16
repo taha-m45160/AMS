@@ -1,9 +1,11 @@
 import React from 'react'
-import './HomepageA.css'
+import './Homepage.css'
 import Navbar from '../../../components/Navbar/Navbar'
-import Homebar from '../../../components/HomebarA/HomebarA'
+import Homebar from '../Homebar/Homebar'
 
-const HomepageA = () => {
+
+const AdminHomepage = () => {
+
     return (
         <div className='home-container'>
             <Navbar></Navbar>
@@ -21,4 +23,4 @@ const HomepageA = () => {
     )
 }
 
-export default HomepageA
+export default AdminHomepage

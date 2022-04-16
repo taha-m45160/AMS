@@ -1,21 +1,38 @@
 import React from 'react'
 import './Navbar.css'
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import {useNavigate} from 'react-router-dom'
+import {Person} from '@material-ui/icons/';
 
 const Navbar = () => {
+    const navigate = useNavigate();
+
+    const logout = (ev) => {
+        ev.preventDefault();
+        navigate('/logout');
+    }
+    const goToAccountDetails = (ev) => {
+        ev.preventDefault();
+        navigate('/accountDetails');
+    }
+
     return(
         <div className='nav'>
             <div className='nav-container'>
-                <div>
-                </div>
-                <div className='title'>
-                    <h1>Academics Management System</h1>
-                </div>
-                <div className='account-icon'>
-                    <AccountCircleOutlinedIcon style={{ fontSize: "60px", color: "white" }}/>
-                </div>
+            <img className='AMS-icon' src={require('../../images/AMS.png')}></img>
+            <div class="dropdown me-4">
+                <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown">
+                    <div className='account-icon'>
+                        <Person style={{ fontSize: "60px", color: "white" }}/>
+                    </div>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item m-3" onClick={goToAccountDetails}>Account details</a></li>
+                    <li><a class="dropdown-item m-3" onClick={logout}> <span> Logout </span></a></li>
+                </ul>
+            </div>
             </div>
         </div>
+        
     )
 }
 

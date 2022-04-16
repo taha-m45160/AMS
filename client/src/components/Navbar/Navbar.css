@@ -1,7 +1,3 @@
-.nav{
-    margin: auto;
-}
-
 .nav-container{
     display: flex;
     width: 100%;
@@ -10,20 +6,15 @@
     background-color:#0F245A;
 }
 
-.title{
-    color: #fff;
-    padding:2px;
-    margin: 0px;
+.AMS-icon{
+    width: 70px;
+    height: 70px;
+    margin-left: 30px;
 }
 
-.title h1{
-    font-family: 'Ruda';
-    font-size: 40px; 
-    font-weight: 50;
-    text-align: center;
-    margin-top: 10px;
+.dropdown-menu>li>a {
+    font-size: 25px;
 }
-
-.account-icon{
-    padding: 10px 14px;
+.dropdown-menu>li>a>span{
+    font-weight: bold;
 }

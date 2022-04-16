@@ -12,7 +12,7 @@ async function hash(string) {
       .map((bytes) => bytes.toString(16).padStart(2, '0'))
       .join('');
     return hashHex;
-  }
+}
 
 const Login = () => {
     const navigate = useNavigate();
@@ -52,7 +52,11 @@ const Login = () => {
 
     return (
     <div> 
-        <Navbar></Navbar>
+        <div className='nav'>
+            <div className='nav-container'>
+            <img className='AMS-icon' src={require('../../../images/AMS.png')}></img>
+            </div>
+        </div>
         <div className = "p-box"></div>
         <div className = "texxt"> 
             <h2> Welcome to AMS! Your own platform to effectively manage your academics </h2>
@@ -62,11 +66,11 @@ const Login = () => {
         <form className="my-form" onSubmit={login}> 
             <div className = "form-group">
                 <label> UserID: </label>
-                <input type="text" name="UserID" onChange={userIDChange}></input>
+                <input type="text" name="UserID" onChange={userIDChange} value={userID}></input>
             </div>
             <div className = "form-group">
                 <label> Password: </label>
-                <input type = "password" name = "Password" onChange={passwordChange}></input>
+                <input type = "password" name = "Password" onChange={passwordChange} value={Pw}></input>
             </div>
             <input className = "button" type = "submit" value = "Login" name = ""></input>
         </form>

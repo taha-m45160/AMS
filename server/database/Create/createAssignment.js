@@ -2,9 +2,13 @@ const Assignment = require('../Schema/Assignment.js')
 const mongoose = require('mongoose')
 
 async function createAssignment(title, section_id, course_id, term, year, deadline, attachment=false, description=false) {
+    const course = await mongoose.connection.db.collection('courses').findOne({
+        ID: course_id
+    })
+
     const section = await mongoose.connection.db.collection('sections').findOne({
-        ID: section_id,
-        course_ID: course_id, 
+        ID: section_id, 
+        course: course._id, 
         term: term, 
         year: year
     })
