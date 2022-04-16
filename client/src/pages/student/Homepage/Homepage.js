@@ -5,7 +5,7 @@ import Homebar from './..//Homebar/Homebar'
 import {useLocation} from 'react-router-dom'
 
 const App = () => {
-    // const {state} = useLocation();
+    const {state} = useLocation();
 
     return (
         <div className='home-container'>
