@@ -1,7 +1,7 @@
 import "./courses.css";
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
-import Navbar from "../../../components/Navbar/Navbar";
+import Navbar from "../";
 import Homebar from "../../admin/Homebar/Homebar";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -98,7 +98,7 @@ export default function Courses() {
             <Navbar />
             <Homebar />
 
-            <div style={{ width: '70%', marginTop: 50, marginLeft: '25%' }}>
+            <div style={{ width: '70%', marginTop: 50, marginLeft: '28%' }}>
                 <Box
                     sx={{
                         display: 'grid',
