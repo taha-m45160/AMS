@@ -7,7 +7,7 @@ import './App.css';
 import Login from './pages/misc/Login/Login.js'
 
 //Student
-import StudentHomepage from './pages/student/Homepage/HomepageS'
+import StudentHomepage from './pages/student/Homepage/Homepage'
 import StudentCourses from './pages/student/courses/courses'
 
 
