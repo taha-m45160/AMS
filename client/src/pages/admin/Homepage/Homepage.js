@@ -2,23 +2,33 @@ import React from 'react'
 import './Homepage.css'
 import Navbar from '../../../components/Navbar/Navbar'
 import Homebar from '../Homebar/Homebar'
+import {useLocation} from 'react-router-dom'
 
 
 const AdminHomepage = () => {
+    const {state} = useLocation();
 
     return (
         <div className='home-container'>
             <Navbar></Navbar>
             <Homebar></Homebar>
-            <div className='text'>
-                <h2>Welcome to AMS! Where managing your academics just got a lot easier!</h2>
+            <div className='Welcome display-3'>
+                <h2 className='display-1' align='center'>Welcome back, <span style={{'font-weight': 'bold'}}>{state.name}</span>!</h2>
             </div>
-            <div className='logo'>
-                <img src={require('../../../images/AMS.png')} />
+            <br />
+            <h1 className="heading display-5 fw-bold" >Announcements</h1>
+            <div className="list-group">
+                {state.announcements.map((announcement) => (
+                    <a className="list-group-item list-group-item-action">
+                        <div className="d-flex w-100 justify-content-between">
+                        <h5 className="display-6" style={{'font-weight': 'bold'}}>{announcement.title}</h5>
+                        </div>
+                        <p className="mb-1">{announcement.body}</p>
+                        <small style={{'font-weight': 'bold'}}> {announcement.date.toString()}</small >
+                    </a>
+                ))}
             </div>
-            <div className='text-tutorial'>
-            <h2>Need help? Click<a href="YOUTUBE">here</a> to watch AMS tutorial.</h2>
-            </div>
+
         </div>
     )
 }
