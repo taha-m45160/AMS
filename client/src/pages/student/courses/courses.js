@@ -2,13 +2,17 @@ import "./courses.css";
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from "../../../components/Navbar/Navbar";
+import Homebar from "../../admin/Homebar/Homebar";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 import PropTypes from 'prop-types';
+import { styled } from '@mui/material/styles';
 
 export default function Courses() {
     const navigate = useNavigate();
@@ -24,7 +28,7 @@ export default function Courses() {
             { code: 'CS-300', title: 'Advanced Programming' },
             { code: 'CS-582', title: 'Distributed Systems' },
             { code: 'CS-535', title: 'Machine Learning' },
-            { code: 'CS-473', title: 'Network Security' }
+            { code: 'CS-473', title: 'Network Security' },
         ]
         const courseComponents = []
 
@@ -39,12 +43,12 @@ export default function Courses() {
                 <Item>
                     <Card sx={{ width: '100%', height: '100%', border: 1 }}>
                         <CardActionArea sx={{ width: '100%', height: '100%' }}>
-                            <CardContent sx={{ textAlign: 'center' }}>
-                                <Typography gutterBottom variant="h4" component="div">
+                            <CardContent sx={{ textAlign: 'center'}}>
+                                <Typography gutterBottom variant="h2" component="div">
                                     {course.code}
                                 </Typography>
 
-                                <Typography variant="body1" color="text.secondary">
+                                <Typography variant="h3" color="text.secondary">
                                     {course.title}
                                 </Typography>
                             </CardContent>
@@ -71,7 +75,7 @@ export default function Courses() {
                     borderRadius: 2,
                     fontSize: '0.875rem',
                     fontWeight: '700',
-                    // width: '75%',
+                    width: '100%',
                     ...sx,
                 }}
                 {...other}
@@ -92,10 +96,9 @@ export default function Courses() {
     return (
         <div className="courses">
             <Navbar />
+            <Homebar />
 
-            {/* <h1>Courses</h1> */}
-
-            <div style={{ width: '100%'}}>
+            <div style={{ width: '70%', marginTop: 50, marginLeft: '25%' }}>
                 <Box
                     sx={{
                         display: 'grid',
