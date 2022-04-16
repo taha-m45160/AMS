@@ -1,30 +1,15 @@
-.text{
-    text-align: center;
-    margin-top: 8%;
-    margin-left: 20%;
+.list-group{
+    margin-left: 35%;
+    width: 60%;
+    max-height: 40%;
+    font-size: 20px;
+    overflow-y: scroll;
 }
 
-.logo{
-    margin-left: 20%;
-    margin-top: 3%;
-    height: 30%;
-    display: flex;
-    justify-content: center;
+.Welcome{
+    margin-left: 25%;
 }
 
-.logo img{
-    width: 30%;
-    margin-top: 0%;
-    align-items: center;
+.heading{
+    margin-left: 35%
 }
-
-.text-tutorial{
-    text-align: center;
-    margin-top: 3%;
-    margin-left: 20%;
-}
-
-.text-tutorial a{
-    font-size: 1em;
-}
-

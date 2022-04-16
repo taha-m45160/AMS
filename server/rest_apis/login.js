@@ -13,7 +13,8 @@ async function login(req, res){
             const token = createToken(req.body.ID+"|"+user.role)
             res.cookie("jwt", token, {httpOnly:true, sameSite:true})
             res.status(200).json({
-                role: user.role
+                role: user.role,
+                name: user.name.first
             })
         } else {
             res.status(401).send()

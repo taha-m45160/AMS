@@ -1,7 +1,7 @@
 .bar{
     position: fixed;
     border-right: 1px solid black;
-    width: 15%;
+    width: 25%;
     margin-left: 10px;
     height: 100%;
 }
@@ -15,7 +15,6 @@
 
 .click-items{
     margin-left: 10%;
-    font-size: 15;
     font-size: 20px;
     text-decoration: underline; 
 }
@@ -24,5 +23,5 @@
 }
 
 .icon {
-    transform: scale(3);
+    transform: scale(2.5);
 }

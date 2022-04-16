@@ -30,8 +30,12 @@ const Login = () => {
                 password : password
             }
             try{
-                const res = await axios.post('http://localhost:8000/login', info);
-                navigate(`/${res.data.role}/`)
+                const res1 = await axios.post('http://localhost:8000/login', info);
+                const res2 = await axios.get('http://localhost:8000/getAnnouncements')
+                navigate(`/${res1.data.role}/`, {state:{
+                    name: res1.data.name,
+                    announcements: res2.data.announcements
+                }})
             } catch (err) {
                 setErrMsg('User ID or password is incorrect')
             }
@@ -64,11 +68,11 @@ const Login = () => {
 
         <div>
         <div className="main">
-            <p className="sign" align="center">Log in</p>
+            <p className="sign" align="center">Login</p>
             <form className="form1" onSubmit={login}>
                 <input className="un " type="text" align="center" placeholder="user ID" onChange={userIDChange} value={userID}/>
                 <input className="pass" type="password" align="center" placeholder="password" onChange={passwordChange} value={Pw}/>
-                <button className="submit" align="center" onSubmit={login}>Login in</button>
+                <button className="submit" align="center" onSubmit={login}>Login</button>
             </form>
             <br />
             <h5 className='text-center text-danger'>{errMsg}</h5>                    

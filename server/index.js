@@ -10,9 +10,13 @@ connect(uri);
 
 // rest apis
 const {login} = require('./rest_apis/login')
+const {getAnnouncements} = require('./rest_apis/getAnnouncements')
+
+// admin
 const {createAccount} = require('./rest_apis/admin/createAccount')
 const {changePassword} = require('./rest_apis/admin/changePassword')
 const {create_course} = require('./rest_apis/admin/createCourse')
+
 const {viewAnnouncements} = require('./rest_apis/parent/viewAnnouncements')
 const {viewStudents} = require('./rest_apis/parent/viewStudents')
 const {viewTakes} = require('./rest_apis/parent/viewTakes')
@@ -35,6 +39,10 @@ app.post('/login', async (req, res) => {
     await login(req, res)
 })
 
+app.get('/getAnnouncements', (authenticateUser), async (req, res) => {
+    await getAnnouncements(req, res)
+})
+
 // Admin
 
 app.post('/admin/changePassword', (authenticateUser), async (req, res) => {
@@ -51,23 +59,19 @@ app.post('/admin/createCourse', (authenticateUser), async (req, res) => {
 
 // Parents
 
-app.post('./parent/announcements', (authenticateUser), async (req, res) => {
-    await viewAnnouncements(req, res)
-})
-
-app.post('./parent/students', (authenticateUser), async (req,res) => {
+app.post('/parent/students', (authenticateUser), async (req,res) => {
     await viewStudents(req, res)
 })
 
-app.post('./parent/studentTakes', (authenticateUser), async (req,res) => {
+app.post('/parent/studentTakes', (authenticateUser), async (req,res) => {
     await viewTakes(req, res)
 })
 
-app.post('./parent/course/overview', (authenticateUser), async (req,res) => {
+app.post('/parent/course/overview', (authenticateUser), async (req,res) => {
     await viewOverview(req, res)
 })
 
-app.post('./parent/course/gradebook', (authenticateUser), async (req,res) => {
+app.post('/parent/course/gradebook', (authenticateUser), async (req,res) => {
     await viewGradebook(req, res)
 })
 
@@ -75,7 +79,7 @@ app.post('./parent/course/gradebook', (authenticateUser), async (req,res) => {
 
 
 
-app.get('./logout', (req, res) => {
+app.get('/logout', (req, res) => {
     res.cookie('jwt', '', {maxAge:1})
     res.status(200).send()
 })
