@@ -1,6 +1,6 @@
 body{
     background-color: #ffffff;
-    line-height: 1.4em;
+    line-height: 120%;
     margin: 0;
 }
 
@@ -10,33 +10,35 @@ body{
 }
 
 .box-1{
-    background-color:#0F245A;
-    color: #fff;
-    border-width: 3px; /* setting border width */
-    border-bottom-width: 5px; /* border all sides 3, but bottom 5 */
-    padding:2px;
+  background-color:#0F245A;
+  color: #fff;
 
+  border-width: 3%; /* setting border width */
+  border-bottom-width: 5%; /* border all sides 3, but bottom 5 */
+  padding:0.5%;
    
-    
 }
 
 .box-1 h1{
-    font-family: 'Ruda';font-size: 40px; font-weight: bold;
-    font-weight: 50;
-    font-style: normal;
-    text-align: center;
+  font-family: 'Ruda';font-size: 225%; font-weight: bold;
+  font-weight: 50;
+  font-style: normal;
+  text-align: center;
 
-    margin-top: 10px; /*adjusts h1 relative to top  */
+  margin-top: 1%; /*adjusts h1 relative to top  */
 }
 .Heading1{
     font-style: normal;
     color:#f9f9f9;
     background-color: #0F245A;
     text-align: center;
-    width: 250px;
-    height: 30px;
-    margin-left: 40%;
+    width: 20%;
+    aspect-ratio: 10;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 3%;
+    /* padding-bottom: 0.5%; */
+    padding-top: 0.5%;
     
 }
 
@@ -44,8 +46,8 @@ body{
     font-family: 'Ruda';font-size: 125%; font-weight: bold;
     font-weight: 50;
     font-style: normal;
-    text-align: center;
-    
+      margin: auto;
+    justify-content: center;
   }
 
 .Heading2{
@@ -66,7 +68,9 @@ body{
   .day {
     width: 15%;
     background-color: #efeff6;
-    padding:1%;
+    padding-bottom:5%;
+    padding-left: 1%;
+    padding-right: 1%;
     float:left;
     margin-right:2%;
   }
@@ -76,14 +80,14 @@ body{
   }
   
   .timeslot {
-    background-color: #384A78;
+    background-color: #0F245A;
     width: auto;
-    height: 20px;
+    height: 5%;
     color: white;
     padding:5%;
-    margin-top: 5px;
-    font-size: 14px;
-    border-radius: 3px;
+    margin-top: 5%;
+    font-size: 100%;
+    border-radius: 5%;
     vertical-align: center;
     text-align:center;
   }
@@ -101,13 +105,17 @@ body{
     text-align: center;
     margin-left: 30%;
     margin-top: 0%;
+
+    padding-bottom: 0.5%;
+    padding-top: 0.5%;
   }
 
 .Heading3 h3{
-    font-family: 'Ruda';font-size: 20px; font-weight: bold;
+    font-family: 'Ruda';font-size: 125%; font-weight: bold;
     font-weight: 50;
     font-style: normal;
-    text-align: center;
+    margin: auto;
+    justify-content: center;
 }
 
   .SendReq{
@@ -116,15 +124,19 @@ body{
     background-color: #0F245A;
     text-align: center;
     width: 12%;
-    height: 15%;
+    aspect-ratio: 8;
+    margin-top: 1%;
     margin-left: 70%;
-    border-radius: 1%;
+    border-radius: 5%;
+    padding-bottom: 0.5%;
+    padding-top: 0.5%;
+    
   }
 
   .SendReq h4{
     font-family: 'Ruda';font-size: 120%; font-weight: bold;
     font-weight: 500;
     font-style: normal;
-    text-align: center;
-    vertical-align: auto;
+    margin: auto;
+    justify-content: center;
   }

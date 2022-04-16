@@ -2,18 +2,37 @@ import React from 'react'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 import './App.css';
+
+//Common
 import Login from './pages/misc/Login/Login.js'
 
+//Student
+import StudentHomepage from './pages/student/Homepage/Homepage'
+import StudentCourses from './pages/student/courses/courses'
+
+
+
+//Parent
+
+
+
+
+
+//Teacher
+
+
+
+
+
+//Admin
 import AdminHomepage from './pages/admin/Homepage/Homepage'
-
-import StudentHomepage from './pages/student/Homepage/HomepageS'
-
 import ChangePassword from './pages/admin/changePassword/changePassword'
-
 import Courses from './pages/admin/Courses/Courses'
 import Enroll from './pages/admin/enroll/enroll'
 
-import StudentCourses from './pages/student/courses/courses'
+
+
+
 
 function App() {
   return (

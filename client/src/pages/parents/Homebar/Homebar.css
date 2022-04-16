@@ -1,36 +1,33 @@
-.bar{
+.bar2{
     position: fixed;
-    float: left;
-    left: 0px;
-    top: 0px;
     border-right: 1px solid black;
-    width: 25%;
+    width: 350px;
+    margin-left: 10px;
     height: 100%;
-    background-color: aqua;
 }
 
-.item{
+.item2{
     display: flex;
-    margin-top: 15%;
-    margin-bottom: 15%;
+    margin-top: 50px;
+    margin-bottom: 50px;
     align-items: center;
 }
 
-.click-items{
-    margin-left: 10%;
+.click-items2{
+    margin-left: 50px;
     font-size: 20px;
     text-decoration: underline; 
 }
-.click-items:hover{
+.click-items2:hover{
     cursor: pointer;
 }
 
-.icon {
+.icon2 {
     transform: scale(2.5);
 }
 
-@media (max-width: 1000px) {
-    .bar{
+@media (max-width: 1150px) {
+    .bar2{
         display: none;
     }
 }

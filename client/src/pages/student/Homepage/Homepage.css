@@ -28,3 +28,11 @@
     font-size: 1em;
 }
 
+@media (max-width: 1150px) {
+    .display-1{
+        transition: ease all .5s;
+    }
+    .list-group{
+        transition: ease all .5s;
+    }
+}

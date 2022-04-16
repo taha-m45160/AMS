@@ -33,12 +33,17 @@ const Homebar = () => {
         navigate('/admin/help');
     }
 
+    const goToCalendar = async (ev) => {
+        ev.preventDefault();
+        navigate('student/calendar')
+    }
+
     return(
         <div className='bar2'>
             <ul className='bar-container2'>
                 <li className='item2'>
                     <People className='icon2'></People>
-                    <a className='click-items2' onClick={goToUsers}>Users</a>
+                    <a className='click-items2' onClick={goToUsers}>Welcome</a>
                 </li>
                 <li className='item2'>
                     <MenuBook className='icon2'></MenuBook>
@@ -47,6 +52,10 @@ const Homebar = () => {
                 <li className='item2'>
                     <Announcement className='icon2'></Announcement>
                     <a className='click-items2' onClick={goToAnnouncements}>Announcements</a>
+                </li>
+                <li className='item2'>
+                    <Announcement className='icon2'></Announcement>
+                    <a className='click-items2' onClick={goToCalendar}>Calendar</a>
                 </li>
                 <li className='item2'>
                     <Help className='icon2'></Help>

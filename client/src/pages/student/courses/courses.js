@@ -1,7 +1,7 @@
 import "./courses.css";
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
-import Navbar from "../../admin/Navbar/Navbar";
+import Navbar from "./../../admin/Navbar/Navbar";
 import Homebar from "../../admin/Homebar/Homebar";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
