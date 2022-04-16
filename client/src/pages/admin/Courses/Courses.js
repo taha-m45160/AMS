@@ -1,6 +1,6 @@
 import "./Courses.css";
 import axios from "axios";
-import Navbar from "../../../components/Navbar/Navbar";
+import Navbar from "./../Navbar/Navbar";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useFormik } from "formik";
 import React from 'react'
