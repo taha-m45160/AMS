@@ -1,7 +1,7 @@
 import "./overview.css";
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
-import Navbar from "../../../../components/Navbar/Navbar";
+import Navbar from "../../../admin/Navbar/Navbar";
 
 
 export default function CourseOverview() {

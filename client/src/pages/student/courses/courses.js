@@ -13,9 +13,17 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
+import Home from '../../student/Homepage/Homepage'
+
 
 export default function Courses() {
     const navigate = useNavigate();
+
+    const toCourse = (id, title) => {
+        sessionStorage.setItem("ccode", id)
+        sessionStorage.setItem("ctitle", title)
+        navigate(`/student/courses/home`)
+    }
 
     const displayCourses = () => {
         // try {
@@ -29,21 +37,24 @@ export default function Courses() {
             { code: 'CS-582', title: 'Distributed Systems' },
             { code: 'CS-535', title: 'Machine Learning' },
             { code: 'CS-473', title: 'Network Security' },
+            { code: 'CS-300', title: 'Advanced Programming' },
+            { code: 'CS-582', title: 'Distributed Systems' },
+            { code: 'CS-535', title: 'Machine Learning' },
+            { code: 'CS-473', title: 'Network Security' },
+            { code: 'CS-300', title: 'Advanced Programming' },
+            { code: 'CS-582', title: 'Distributed Systems' },
+            { code: 'CS-535', title: 'Machine Learning' },
+            { code: 'CS-473', title: 'Network Security' },
         ]
         const courseComponents = []
-
-        const toCourse = (id, title) => {
-            sessionStorage.setItem("ccode", id)
-            sessionStorage.setItem("ctitle", title)
-            navigate(`/student/courses/${id}/overview`)
-        }
 
         enrolledCourses.map((course) => {
             courseComponents.push(
                 <Item>
+
                     <Card sx={{ width: '100%', height: '100%', border: 1 }}>
-                        <CardActionArea sx={{ width: '100%', height: '100%' }}>
-                            <CardContent sx={{ textAlign: 'center'}}>
+                        <CardActionArea sx={{ width: '100%', height: '100%' }} onClick={() => toCourse(course.code, course.title)}>
+                            <CardContent sx={{ textAlign: 'center' }}>
                                 <Typography gutterBottom variant="h2" component="div">
                                     {course.code}
                                 </Typography>
@@ -98,7 +109,7 @@ export default function Courses() {
             <Navbar />
             <Homebar />
 
-            <div style={{ width: '70%', marginTop: 50, marginLeft: '28%' }}>
+            <div className="c1" style={{ width: '70%', marginTop: 50, marginLeft: '28%' }}>
                 <Box
                     sx={{
                         display: 'grid',

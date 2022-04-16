@@ -8,3 +8,9 @@
 .courses h1 {
     text-align: center;
 }
+
+@media (max-width:1150px) {
+    .c1 {
+        width: 100%;
+    }
+}

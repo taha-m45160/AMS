@@ -9,7 +9,7 @@ import Login from './pages/misc/Login/Login.js'
 //Student
 import StudentHomepage from './pages/student/Homepage/Homepage'
 import StudentCourses from './pages/student/courses/courses'
-
+import CourseHome from './pages/student/courses/overview/overview'
 
 
 //Parent
@@ -47,6 +47,7 @@ function App() {
               <Route path="/admin/enroll" element={<Enroll/>}/>
               <Route path="/student/" element={<StudentHomepage/>}/>
               <Route path="/student/courses/" element={<StudentCourses/>}/>
+              <Route path="/student/courses/home" element={<CourseHome />}/>
           
           </Routes>
       </Router>
