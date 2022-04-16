@@ -1,11 +1,11 @@
-import React from 'react'
-import './Homebar.css'
-import {useNavigate} from 'react-router-dom'
+import React from 'react';
+import { SideBarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu} from './SidebarElements';
 import {Home, People, EventNote, Announcement, Help} from '@material-ui/icons/';
+import {useNavigate} from 'react-router-dom'
+import './SidebarSlide.css'
 import axios from 'axios';
 
-
-const Homebar = () => {
+const SideBar = ({ isOpen, toggle }) => {
 
     const navigate = useNavigate();
     const [errMsg, setErrMsg] = React.useState('')
@@ -81,32 +81,40 @@ const Homebar = () => {
         navigate('/parent/help');
     }
 
-    return(
-        <div className='bar2'>
-            <ul className='bar-container2'>
-                <li className='item2'>
-                    <Home className='icon2'></Home>
-                    <a className='click-items2' onClick={goToHome}>Welcome</a>
-                </li>
-                <li className='item2'>
-                    <People className='icon2'></People>
-                    <a className='click-items2' onClick={goToStudent}>Students</a>
-                </li>
-                <li className='item2'>
-                    <EventNote className='icon2'></EventNote>
-                    <a className='click-items2' onClick={goToMeeting}>Request Meeting</a>
-                </li>
-                <li className='item2'>
-                    <Announcement className='icon2'></Announcement>
-                    <a className='click-items2' onClick={goToAnnouncements}>Announcements</a>
-                </li>
-                <li className='item2'>
-                    <Help className='icon2'></Help>
-                    <a className='click-items2' onClick={goToHelp}>Help</a>
-                </li>
-            </ul>
-        </div>
-    )
-}
 
-export default Homebar
+    return (
+        <SideBarContainer isOpen={isOpen} onClick={toggle}>
+            <Icon onClick={toggle}>
+                <CloseIcon />
+            </Icon>
+            <SidebarWrapper>
+                <SidebarMenu>
+                <ul className='bar-container1'>
+                    <li className='item1'>
+                        <Home className='icon1'></Home>
+                        <a className='click-items1' onClick={goToHome}>Welcome</a>
+                    </li>
+                    <li className='item1'>
+                        <People className='icon1'></People>
+                        <a className='click-items1' onClick={goToStudent}>Students</a>
+                    </li>
+                    <li className='item1'>
+                        <EventNote className='icon1'></EventNote>
+                        <a className='click-items1' onClick={goToMeeting}>Request Meeting</a>
+                    </li>
+                    <li className='item1'>
+                        <Announcement className='icon1'></Announcement>
+                        <a className='click-items1' onClick={goToAnnouncements}>Announcements</a>
+                    </li>
+                    <li className='item1'>
+                        <Help className='icon1'></Help>
+                        <a className='click-items1' onClick={goToHelp}>Help</a>
+                    </li>
+                </ul>
+                </SidebarMenu>
+            </SidebarWrapper>
+        </SideBarContainer>
+    );
+};
+
+export default SideBar;
