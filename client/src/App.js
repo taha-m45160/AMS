@@ -8,7 +8,7 @@ import AdminHomepage from './pages/admin/Homepage/Homepage'
 
 import ChangePassword from './pages/admin/changePassword/changePassword'
 
-import CreateCourse from './pages/admin/createCourse/createCourse'
+import Courses from './pages/admin/Courses/Courses'
 import Enroll from './pages/admin/enroll/enroll'
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
 
               <Route path="/admin/" element={(<AdminHomepage />)}/>
               <Route path="/admin/users" element={<ChangePassword />}/>
-              <Route path="/admin/courses" element={<CreateCourse/>}/>
+              <Route path="/admin/courses" element={<Courses/>}/>
               <Route path="/admin/enroll" element={<Enroll/>}/>
           
           </Routes>

@@ -1,7 +1,6 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
 import './Login.css'
-import Navbar from '../../../components/Navbar/Navbar'
 const axios = require('axios')
 
 async function hash(string) {
