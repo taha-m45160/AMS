@@ -16,6 +16,7 @@ const {getAnnouncements} = require('./rest_apis/getAnnouncements')
 const {createAccount} = require('./rest_apis/admin/createAccount')
 const {changePassword} = require('./rest_apis/admin/changePassword')
 const {create_course} = require('./rest_apis/admin/createCourse')
+const {getCourses} = require('./rest_apis/admin/getCourses')
 
 const {viewAnnouncements} = require('./rest_apis/parent/viewAnnouncements')
 const {viewStudents} = require('./rest_apis/parent/viewStudents')
@@ -56,6 +57,11 @@ app.post('/admin/createAccount', (authenticateUser), async (req, res) => {
 app.post('/admin/createCourse', (authenticateUser), async (req, res) => {
     await create_course(req, res)
 })
+
+app.get('/admin/courses', (authenticateUser), async (req, res) => {
+    await getCourses(req, res)
+})
+
 
 // Parents
 

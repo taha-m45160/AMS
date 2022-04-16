@@ -1,33 +1,34 @@
 import React from 'react'
 import './Homebar.css'
 import {useNavigate} from 'react-router-dom'
-import {People, MenuBook, Group, Announcement, Help} from '@material-ui/icons/';
+import {People, MenuBook, Announcement, Help} from '@material-ui/icons/';
+import axios from 'axios';
+
 
 const Homebar = () => {
 
     const navigate = useNavigate();
+    axios.defaults.withCredentials = true
 
-    const goToUsers = (ev) => {
+    const goToUsers = async (ev) => {
         ev.preventDefault();
         navigate('/admin/users');
     }
 
-    const goToCourses = (ev) => {
+    const goToCourses = async (ev) => {
         ev.preventDefault();
-        navigate('/admin/courses');
+        const res = await axios.get('http://localhost:8000/admin/courses')
+        navigate('/admin/courses', {state: {
+            courses: res.data.courses
+        }})
     }
 
-    const goToSections = (ev) => {
-        ev.preventDefault();
-        navigate('/admin/sections');
-    }
-
-    const goToAnnouncements = (ev) => {
+    const goToAnnouncements = async (ev) => {
         ev.preventDefault();
         navigate('/admin/announcements');
     }
 
-    const goToHelp = (ev) => {
+    const goToHelp = async (ev) => {
         ev.preventDefault();
         navigate('/admin/help');
     }
@@ -42,10 +43,6 @@ const Homebar = () => {
                 <li className='item2'>
                     <MenuBook className='icon2'></MenuBook>
                     <a className='click-items2' onClick={goToCourses}>Courses</a>
-                </li>
-                <li className='item2'>
-                    <Group className='icon2'></Group>
-                    <a className='click-items2' onClick={goToSections}>Sections</a>
                 </li>
                 <li className='item2'>
                     <Announcement className='icon2'></Announcement>
