@@ -1,6 +1,6 @@
 import "./createCourse.css";
 import axios from "axios";
-import Navbar from "../../../components/Navbar/Navbar";
+import Navbar from "./../Navbar/Navbar";
 import { useNavigate } from "react-router";
 import { useFormik } from "formik";
 

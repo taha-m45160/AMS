@@ -1,59 +1,56 @@
 import React from 'react'
 import './Homebar.css'
 import {useNavigate} from 'react-router-dom'
-import {People, MenuBook, Group, Announcement, Help} from '@material-ui/icons/';
+import {People, MenuBook, Announcement, Help} from '@material-ui/icons/';
+import axios from 'axios';
+
 
 const Homebar = () => {
 
     const navigate = useNavigate();
+    axios.defaults.withCredentials = true
 
-    const goToUsers = (ev) => {
+    const goToUsers = async (ev) => {
         ev.preventDefault();
         navigate('/admin/users');
     }
 
-    const goToCourses = (ev) => {
+    const goToCourses = async (ev) => {
         ev.preventDefault();
-        navigate('/admin/courses');
+        const res = await axios.get('http://localhost:8000/admin/courses')
+        navigate('/admin/courses', {state: {
+            courses: res.data.courses
+        }})
     }
 
-    const goToSections = (ev) => {
-        ev.preventDefault();
-        navigate('/admin/sections');
-    }
-
-    const goToAnnouncements = (ev) => {
+    const goToAnnouncements = async (ev) => {
         ev.preventDefault();
         navigate('/admin/announcements');
     }
 
-    const goToHelp = (ev) => {
+    const goToHelp = async (ev) => {
         ev.preventDefault();
         navigate('/admin/help');
     }
 
     return(
-        <div className='bar'>
-            <ul className='bar-container'>
-                <li className='item'>
-                    <People className='icon'></People>
-                    <a className='click-items' onClick={goToUsers}>Users</a>
+        <div className='bar2'>
+            <ul className='bar-container2'>
+                <li className='item2'>
+                    <People className='icon2'></People>
+                    <a className='click-items2' onClick={goToUsers}>Users</a>
                 </li>
-                <li className='item'>
-                    <MenuBook className='icon'></MenuBook>
-                    <a className='click-items' onClick={goToCourses}>Courses</a>
+                <li className='item2'>
+                    <MenuBook className='icon2'></MenuBook>
+                    <a className='click-items2' onClick={goToCourses}>Courses</a>
                 </li>
-                <li className='item'>
-                    <Group className='icon'></Group>
-                    <a className='click-items' onClick={goToSections}>Sections</a>
+                <li className='item2'>
+                    <Announcement className='icon2'></Announcement>
+                    <a className='click-items2' onClick={goToAnnouncements}>Announcements</a>
                 </li>
-                <li className='item'>
-                    <Announcement className='icon'></Announcement>
-                    <a className='click-items' onClick={goToAnnouncements}>Announcements</a>
-                </li>
-                <li className='item'>
-                    <Help className='icon'></Help>
-                    <a className='click-items' onClick={goToHelp}>Help</a>
+                <li className='item2'>
+                    <Help className='icon2'></Help>
+                    <a className='click-items2' onClick={goToHelp}>Help</a>
                 </li>
             </ul>
         </div>
