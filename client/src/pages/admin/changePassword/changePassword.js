@@ -2,7 +2,7 @@ import "./changePassword.css";
 import axios from "axios";
 import { useFormik } from "formik";
 import searchIcon from "../../../images/search.png";
-import Navbar from "../../../components/Navbar/Navbar";
+import Navbar from "./../Navbar/Navbar";
 
 export default function ChangePassword() {
 

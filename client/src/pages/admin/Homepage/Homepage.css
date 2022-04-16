@@ -1,4 +1,5 @@
 .list-group{
+    transition: ease all .5s;
     margin-left: 35%;
     width: 60%;
     max-height: 40%;
@@ -7,9 +8,51 @@
 }
 
 .Welcome{
+    transition: ease all .5s;
     margin-left: 25%;
 }
 
 .heading{
+    transition: ease all .5s;
     margin-left: 35%
+}
+
+.sidebar-icon{
+    display: none;
+}
+
+@media (max-width: 1150px) {
+    .list-group{
+        transition: ease all .5s;
+        margin-left: 35%;
+        width: 60%;
+        max-height: 40%;
+        font-size: 20px;
+        overflow-y: scroll;
+    }
+
+    .Welcome{
+        transition: ease all .5s;
+        margin-left: 0%;
+    }
+
+    .heading{
+        transition: ease all .5s;
+        margin-left: 10%;
+    }
+
+    .list-group{
+        transition: ease all .5s;
+        margin-left: 10%;
+        width: 60%;
+        max-height: 40%;
+        font-size: 20px;
+        overflow-y: scroll;
+    }
+    .sidebar-icon{
+        display: flex;
+        position: absolute;
+        top: 1%;
+        left: 1%
+    }
 }

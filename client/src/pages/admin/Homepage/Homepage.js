@@ -1,9 +1,8 @@
 import React from 'react'
 import './Homepage.css'
-import Navbar from '../../../components/Navbar/Navbar'
+import Navbar from './../Navbar/Navbar'
 import Homebar from '../Homebar/Homebar'
 import {useLocation} from 'react-router-dom'
-
 
 const AdminHomepage = () => {
     const {state} = useLocation();

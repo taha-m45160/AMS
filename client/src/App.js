@@ -5,6 +5,7 @@ import './App.css';
 import Login from './pages/misc/Login/Login.js'
 
 import AdminHomepage from './pages/admin/Homepage/Homepage'
+import StudentHomepage from './pages/student/Homepage/HomepageS'
 
 import ChangePassword from './pages/admin/changePassword/changePassword'
 

@@ -2,98 +2,125 @@ import React from 'react'
 import './HomebarS.css'
 import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import {Home, MenuBook, Announcement, Help} from '@material-ui/icons/';
 
 const Homebar = () => {
 
     const navigate = useNavigate();
     const [errMsg, setErrMsg] = React.useState('')
 
-    const welcomeBack = (ev) => {
+    const goHome = (ev) => {
         ev.preventDefault();
-        navigate('/student')
+        navigate('/student');
     }
 
-    const viewCourses = async (ev) => {
+    const goToCourses = async (ev) => {
         ev.preventDefault();
         try{
-            const res = await axios.get('http://localhost:8000/', {withCredentials: true});
-            if(res.data.courses.length === 0){
-                setErrMsg("No course");
+            const res = await axios.get('http://localhost:3000/student/courses', {withCredentials: true});
+            if (res.data.courses.length === 0){
+                setErrMsg("Not enrolled in any course.")
             }
-            else{
-                navigate('/student/courses', {state: {
+            else {
+                navigate('student/courses', {state: {
                     courses: res.data.courses,
-                    userType: "student"
+                    userType: 'student'
                 }})
             }
         }
-        catch(err){
+        catch (err) {
             if(err.response){
                 setErrMsg(err.response.statusText)
             }
         }
     }
 
-    const viewAnnouncemnets = async (ev) => {
+    const goToAnnouncements = async (ev) => {
         ev.preventDefault();
         try{
-            const res = await axios.get('http://localhost:8000/', {withCredentials: true});
-            if(res.data.announcements.length === 0){
-                setErrMsg("No announcements");
+            const res = await axios.get('http://localhost:3000/student/announcements', {withCredentials: true});
+            if (res.data.announcements.length === 0){
+                setErrMsg("No announcements.")
             }
-            else{
-                navigate('/student/announcements', {state: {
+            else {
+                navigate('student/announcements', {state: {
                     announcements: res.data.announcements,
-                    userType: "student"
+                    userType: 'student'
                 }})
             }
         }
-        catch(err){
+        catch (err) {
             if(err.response){
                 setErrMsg(err.response.statusText)
             }
         }
     }
 
-    const viewCalendar = async (ev) => {
+    const goToCalendar = async (ev) => {
         ev.preventDefault();
         try{
-            const res = await axios.get('http://localhost:8000/', {withCredentials: true});
-            if(res.data.calendar.length === 0){
-                setErrMsg("No calendar");
+            const res = await axios.get('http://localhost:3000/student/calendar', {withCredentials: true});
+            if (res.data.calendar.length === 0){
+                setErrMsg("No calendar.")
             }
-            else{
-                navigate('/student/calendar', {state: {
+            else {
+                navigate('student/calendar', {state: {
                     calendar: res.data.calendar,
-                    userType: "student"
+                    userType: 'student'
                 }})
             }
         }
-        catch(err){
+        catch (err) {
             if(err.response){
                 setErrMsg(err.response.statusText)
             }
         }
     }
 
-    return (
+    const goToHelp = async (ev) => {
+        ev.preventDefault();
+        try{
+            const res = await axios.get('http://localhost:3000/student/help', {withCredentials: true});
+            if (res.data.help.length === 0){
+                setErrMsg("No help.")
+            }
+            else {
+                navigate('student/help', {state: {
+                    help: res.data.help,
+                    userType: 'help'
+                }})
+            }
+        }
+        catch (err) {
+            if(err.response){
+                setErrMsg(err.response.statusText)
+            }
+        }
+    }
+
+    return(
         <div className='bar'>
             <ul className='bar-container'>
                 <li className='item'>
-                    <img src={require('../../images/Welcome.png')} width="50px"/>
-                    <button className='click-items' onClick={welcomeBack}>Welcome</button>
+                    <Home className='icon'></Home>
+                    <a className='click-items' onClick={goHome}>Welcome</a>
                 </li>
                 <li className='item'>
-                <img src={require('../../images/Current Courses.png')} width="50px"/>
-                    <button className='click-items' onClick={viewCourses}>Current Courses</button>
+                    <MenuBook className='icon'></MenuBook>
+                    <a className='click-items' onClick={goToCourses}>Current Courses</a>
                 </li>
                 <li className='item'>
-                <img src={require('../../images/Announcements.png')} width="50px"/>
-                    <button className='click-items' onClick={viewAnnouncemnets}>Announcements</button>
+                    <Announcement className='icon'></Announcement>
+                    <a className='click-items' onClick={goToAnnouncements}>Announcements</a>
                 </li>
                 <li className='item'>
-                    <img src={require('../../images/Calendar.png')} width="50px"/>
-                    <button className='click-items' onClick={viewCalendar}>Calendar</button>
+                    <CalendarMonthIcon className='icon'></CalendarMonthIcon>
+                    <a className='click-items' onClick={goToCalendar}>Calendar</a>
+                </li>
+                <li className='item'>
+                    <Help className='icon'></Help>
+                    <a className='click-items' onClick={goToHelp}>Help</a>
                 </li>
             </ul>
         </div>
