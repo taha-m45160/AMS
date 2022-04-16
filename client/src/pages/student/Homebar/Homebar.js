@@ -8,34 +8,57 @@ import axios from 'axios';
 const Homebar = () => {
 
     const navigate = useNavigate();
+    const [errMsg, setErrMsg] = React.useState('')
     axios.defaults.withCredentials = true
 
-    const goToUsers = async (ev) => {
+    const goToHome = async (ev) => {
         ev.preventDefault();
-        navigate('/admin/users');
+        navigate('/student');
     }
 
     const goToCourses = async (ev) => {
         ev.preventDefault();
-        const res = await axios.get('http://localhost:8000/admin/courses')
-        navigate('/admin/courses', {state: {
-            courses: res.data.courses
-        }})
+        try{
+            const res = await axios.get('http://localhost:8000/student/courses', {withCredentials: true});
+            if (res.data.courses.length === 0){
+                setErrMsg("No course found.")
+            }
+            else {
+                navigate('/student/courses', {state: {
+                    courses: res.data.courses,
+                }})
+            }
+        }
+        catch (err) {
+            if(err.response){
+                setErrMsg(err.response.statusText)
+            }
+        }
     }
 
     const goToAnnouncements = async (ev) => {
         ev.preventDefault();
-        navigate('/admin/announcements');
+        try{
+            const res = await axios.get('http://localhost:8000/student/announcements', {withCredentials: true});
+            if (res.data.announcements.length === 0){
+                setErrMsg("No announcement found.")
+            }
+            else {
+                navigate('/student/announcements', {state: {
+                    announcements: res.data.announcements,
+                }})
+            }
+        }
+        catch (err) {
+            if(err.response){
+                setErrMsg(err.response.statusText)
+            }
+        }
     }
 
     const goToHelp = async (ev) => {
         ev.preventDefault();
-        navigate('/admin/help');
-    }
-
-    const goToCalendar = async (ev) => {
-        ev.preventDefault();
-        navigate('student/calendar')
+        navigate('/student/help');
     }
 
     return(
@@ -43,7 +66,7 @@ const Homebar = () => {
             <ul className='bar-container2'>
                 <li className='item2'>
                     <People className='icon2'></People>
-                    <a className='click-items2' onClick={goToUsers}>Welcome</a>
+                    <a className='click-items2' onClick={goToHome}>Welcome</a>
                 </li>
                 <li className='item2'>
                     <MenuBook className='icon2'></MenuBook>
@@ -52,10 +75,6 @@ const Homebar = () => {
                 <li className='item2'>
                     <Announcement className='icon2'></Announcement>
                     <a className='click-items2' onClick={goToAnnouncements}>Announcements</a>
-                </li>
-                <li className='item2'>
-                    <Announcement className='icon2'></Announcement>
-                    <a className='click-items2' onClick={goToCalendar}>Calendar</a>
                 </li>
                 <li className='item2'>
                     <Help className='icon2'></Help>
