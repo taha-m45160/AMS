@@ -13,13 +13,13 @@ import StudentCourses from './pages/student/courses/courses'
 
 
 //Parent
-
+import ParentHomepage from './pages/parents/Homepage/Homepage'
 
 
 
 
 //Teacher
-
+import TeacherHomepage from './pages/teachers/Homepage/Homepage'
 
 
 
