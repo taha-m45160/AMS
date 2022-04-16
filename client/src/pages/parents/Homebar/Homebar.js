@@ -36,26 +36,6 @@ const Homebar = () => {
         }
     }
 
-    const goToGradebook = async (ev) => {
-        ev.preventDefault();
-        try{
-            const res = await axios.get('http://localhost:8000/student/gradebook', {withCredentials: true});
-            if (res.data.gradebook.length === 0){
-                setErrMsg("No gradebook found.")
-            }
-            else {
-                navigate('/student/gradebook', {state: {
-                    gradebook: res.data.gradebook,
-                }})
-            }
-        }
-        catch (err) {
-            if(err.response){
-                setErrMsg(err.response.statusText)
-            }
-        }
-    }
-
     const goToAnnouncements = async (ev) => {
         ev.preventDefault();
         try{

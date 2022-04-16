@@ -69,22 +69,22 @@ const SideBar = ({ isOpen, toggle }) => {
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
-                    <ul className='bar-container2'>
-                        <li className='item2'>
-                            <People className='icon2'></People>
-                            <a className='click-items2' onClick={goToHome}>Welcome</a>
+                    <ul className='bar-container1'>
+                        <li className='item1'>
+                            <People className='icon1'></People>
+                            <a className='click-items1' onClick={goToHome} style={{color:"white"}}>Welcome</a>
                         </li>
-                        <li className='item2'>
-                            <MenuBook className='icon2'></MenuBook>
-                            <a className='click-items2' onClick={goToCourses}>Courses</a>
+                        <li className='item1'>
+                            <MenuBook className='icon1'></MenuBook>
+                            <a className='click-items1' onClick={goToCourses} style={{color:"white"}}>Courses</a>
                         </li>
-                        <li className='item2'>
-                            <Announcement className='icon2'></Announcement>
-                            <a className='click-items2' onClick={goToAnnouncements}>Announcements</a>
+                        <li className='item1'>
+                            <Announcement className='icon1'></Announcement>
+                            <a className='click-items1' onClick={goToAnnouncements} style={{color:"white"}}>Announcements</a>
                         </li>
-                        <li className='item2'>
-                            <Help className='icon2'></Help>
-                            <a className='click-items2' onClick={goToHelp}>Help</a>
+                        <li className='item1'>
+                            <Help className='icon1'></Help>
+                            <a className='click-items1' onClick={goToHelp} style={{color:"white"}}>Help</a>
                         </li>
                     </ul>
                 </SidebarMenu>

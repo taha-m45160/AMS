@@ -1,0 +1,33 @@
+.bar2{
+    position: fixed;
+    border-right: 1px solid black;
+    width: 350px;
+    margin-left: 10px;
+    height: 100%;
+}
+
+.item2{
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.click-items2{
+    margin-left: 50px;
+    font-size: 20px;
+    text-decoration: underline; 
+}
+.click-items2:hover{
+    cursor: pointer;
+}
+
+.icon2 {
+    transform: scale(2.5);
+}
+
+@media (max-width: 1150px) {
+    .bar2{
+        display: none;
+    }
+}
