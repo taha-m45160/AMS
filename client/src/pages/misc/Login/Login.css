@@ -1,170 +1,118 @@
-body{
-    background-color: #ffffff;
-    line-height: 1.4em;
-    margin: 0;
-}
-
-a{
-    text-decoration: none;
-    color: #000;
-}
-
-a:hover{
-    color:red;
-}
-
-.texxt{
-    font-style: normal;
-    color:#0F245A;
-    text-align: center;
-}
-
-.button{
-    background-color: #ffffff;
-    color: #0F245A;
-    padding: 10px 15px;
-    border-radius: 30%;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.clr{
-    clear: both;
-}
-
-.box-1{
-    background-color:#0F245A;
-    color: #fff;
-    border-width: 3px;
-    border-bottom-width: 5px;
-    padding:2px;
-    margin: 0px;
-}
-
-.box-1 h1{
-    font-family: 'Ruda';font-size: 40px; font-weight: bold;
-    font-weight: 50;
-    font-style: normal;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.categories{
-    border: 1px #333333 solid;
-    padding: 20px;
-    border-radius: 25px;
-    background-color: rgb(0, 247, 255);
-    padding-bottom: 1px;
-    margin: 20px 0;
-}
-
-.categories h2{
-    text-align:left;
-}
-
-.categories ul{
-    padding: 10px;
-    list-style:square;
-}
-
-.categories li{
-    padding-top: 5px;
-    padding-bottom: 10px;
-    border-bottom: dotted 1px #333;
-}
-
-.p-box{
-    width: 120px;
-    height: 120px;
-    margin-top: 60px; 
-    position: relative;
-    background-image:url('../../../../public/AMS.png');
-    background-size: 100%;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.my-form{
-    padding: 10px;
-    margin-top: 30px;
-    border-radius: 20%;
-
-    text-align: center;
-}
-
-.my-form .form-group{
-    padding-bottom: 10px; 
-}
-
-.my-form label{
-    display: block;
-}
-
-.block{
-    float:left;
-    width: 33%; 
-    border:1px solid #ccc;
-    padding: 10px;
-    box-sizing: border-box; 
-}
-
-#main-block{
-    width: 50%;
-}
-
-#main-block{
-    float: left;
-    width: 70%;
-    box-sizing: border-box;
-}
-
-#side-bar{
-    float: right;
-    width: 30%;
-    background-color: #000;
-    color: aqua;
-    padding: 15px;
-    box-sizing: border-box;
-}
-
-.fix-me{
-    position: fixed;
-    top: 400px;
-}
-
-.my-list li:first-child{
-    background: red
-}
-
-.my-list li:last-child{
-    background: blue;
-}
-
-.my-list li:nth-child(5){
-    background: yellow;
-}
-
-.my-list li:nth-child(even){
-    background: greenyellow;
-}
-
-.tabs{
-    border: 1px blue solid;
-}
-
-.nav-container{
-    display: flex;
+.nav{
+    top: 0px;
     width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    background-color:#0F245A;
+    background-color: #0F245A;
 }
 
 .AMS-icon{
-    width: 70px;
-    height: 70px;
-    margin-left: 30px;
-    margin-bottom: 12px;
     margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 30px;
 }
+
+.title{
+    margin-top: 8%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+body {
+    background-color: #F3EBF6;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.main {
+    background-color: #FFFFFF;
+    width: 400px;
+    height: 400px;
+    margin: 7em auto;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.sign {
+    padding-top: 40px;
+    color: #0F245A;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.un {
+width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+}
+
+form.form1 {
+    padding-top: 40px;
+}
+
+.pass {
+        width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+}
+
+
+.un:focus, .pass:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+    
+}
+
+.submit {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #0F245A, #0F245A);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 35%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.forgot {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: #E1BEE7;
+    padding-top: 15px;
+}
+
+a {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: #E1BEE7;
+    text-decoration: none
+}
+        

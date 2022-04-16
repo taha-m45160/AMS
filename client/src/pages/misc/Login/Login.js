@@ -54,27 +54,27 @@ const Login = () => {
     <div> 
         <div className='nav'>
             <div className='nav-container'>
-            <img className='AMS-icon' src={require('../../../images/AMS.png')}></img>
+                <img className='AMS-icon' src={require('../../../images/AMS.png')}></img>
             </div>
         </div>
-        <div className = "p-box"></div>
-        <div className = "texxt"> 
-            <h2> Welcome to AMS! Your own platform to effectively manage your academics </h2>
+        <div className = "title" align="center"> 
+            <h1 className="display-2">Academic Management System</h1>
+            <h2 className='display-5'> Welcome to AMS! Your own platform to effectively manage your academics</h2>
         </div>
 
-
-        <form className="my-form" onSubmit={login}> 
-            <div className = "form-group">
-                <label> UserID: </label>
-                <input type="text" name="UserID" onChange={userIDChange} value={userID}></input>
-            </div>
-            <div className = "form-group">
-                <label> Password: </label>
-                <input type = "password" name = "Password" onChange={passwordChange} value={Pw}></input>
-            </div>
-            <input className = "button" type = "submit" value = "Login" name = ""></input>
-        </form>
-        <h5 className='text-center text-danger'>{errMsg}</h5>
+        <div>
+        <div className="main">
+            <p className="sign" align="center">Log in</p>
+            <form className="form1" onSubmit={login}>
+                <input className="un " type="text" align="center" placeholder="user ID" onChange={userIDChange} value={userID}/>
+                <input className="pass" type="password" align="center" placeholder="password" onChange={passwordChange} value={Pw}/>
+                <button className="submit" align="center" onSubmit={login}>Login in</button>
+            </form>
+            <br />
+            <h5 className='text-center text-danger'>{errMsg}</h5>                    
+        </div>
+            
+        </div>
     </div>
      );
 }
