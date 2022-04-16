@@ -1,7 +1,7 @@
 import React from 'react'
 import './Homebar.css'
 import {useNavigate} from 'react-router-dom'
-import {Home, People, EventNote, Announcement, Help} from '@material-ui/icons/';
+import {People, MenuBook, Announcement, Book, Help} from '@material-ui/icons/';
 import axios from 'axios';
 
 
@@ -13,19 +13,19 @@ const Homebar = () => {
 
     const goToHome = async (ev) => {
         ev.preventDefault();
-        navigate('/parent');
+        navigate('/teacher');
     }
 
-    const goToStudent = async (ev) => {
+    const goToCourses = async (ev) => {
         ev.preventDefault();
         try{
-            const res = await axios.get('http://localhost:8000/parent/students', {withCredentials: true});
-            if (res.data.students.length === 0){
+            const res = await axios.get('http://localhost:8000/teacher/courses', {withCredentials: true});
+            if (res.data.courses.length === 0){
                 setErrMsg("No course found.")
             }
             else {
-                navigate('/parent/students', {state: {
-                    students: res.data.students,
+                navigate('/teacher/courses', {state: {
+                    courses: res.data.courses,
                 }})
             }
         }
@@ -36,16 +36,16 @@ const Homebar = () => {
         }
     }
 
-    const goToMeeting = async (ev) => {
+    const goToGradebook = async (ev) => {
         ev.preventDefault();
         try{
-            const res = await axios.get('http://localhost:8000/parent/meeting', {withCredentials: true});
-            if (res.data.meeting.length === 0){
-                setErrMsg("No announcement found.")
+            const res = await axios.get('http://localhost:8000/teacher/gradebook', {withCredentials: true});
+            if (res.data.gradebook.length === 0){
+                setErrMsg("No gradebook found.")
             }
             else {
-                navigate('/parent/meeting', {state: {
-                    meeting: res.data.meeting,
+                navigate('/teacher/gradebook', {state: {
+                    gradebook: res.data.gradebook,
                 }})
             }
         }
@@ -59,12 +59,12 @@ const Homebar = () => {
     const goToAnnouncements = async (ev) => {
         ev.preventDefault();
         try{
-            const res = await axios.get('http://localhost:8000/parent/announcements', {withCredentials: true});
+            const res = await axios.get('http://localhost:8000/teacher/announcements', {withCredentials: true});
             if (res.data.announcements.length === 0){
                 setErrMsg("No announcement found.")
             }
             else {
-                navigate('/parent/announcements', {state: {
+                navigate('/teacher/announcements', {state: {
                     announcements: res.data.announcements,
                 }})
             }
@@ -78,23 +78,19 @@ const Homebar = () => {
 
     const goToHelp = async (ev) => {
         ev.preventDefault();
-        navigate('/parent/help');
+        navigate('/teacher/help');
     }
 
     return(
         <div className='bar2'>
             <ul className='bar-container2'>
                 <li className='item2'>
-                    <Home className='icon2'></Home>
+                    <People className='icon2'></People>
                     <a className='click-items2' onClick={goToHome}>Welcome</a>
                 </li>
                 <li className='item2'>
-                    <People className='icon2'></People>
-                    <a className='click-items2' onClick={goToStudent}>Students</a>
-                </li>
-                <li className='item2'>
-                    <EventNote className='icon2'></EventNote>
-                    <a className='click-items2' onClick={goToMeeting}>Request Meeting</a>
+                    <MenuBook className='icon2'></MenuBook>
+                    <a className='click-items2' onClick={goToCourses}>Courses</a>
                 </li>
                 <li className='item2'>
                     <Announcement className='icon2'></Announcement>
