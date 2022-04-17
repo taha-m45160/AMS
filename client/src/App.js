@@ -12,6 +12,7 @@ import StudentCourses from './pages/student/courses/courses'
 import CourseHome from './pages/student/courses/overview/overview'
 import StudentResources from './pages/student/courses/resources/resources'
 import StudentAssignments from './pages/student/courses/assignments/assignments'
+import StudentAssignment from './pages/student/courses/assignments/assignment/assignment'
 
 //Parent
 import ParentHomepage from './pages/parents/Homepage/Homepage'
@@ -51,6 +52,7 @@ function App() {
               <Route path="/student/courses/home" element={<CourseHome />}/>
               <Route path="/student/courses/resources" element={<StudentResources />}/>
               <Route path="/student/courses/assignments" element={<StudentAssignments />}/>
+              <Route path="/student/courses/assignments/assignment" element={<StudentAssignment />}/>
           </Routes>
       </Router>
     </div>

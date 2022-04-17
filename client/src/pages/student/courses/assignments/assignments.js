@@ -5,64 +5,96 @@ import { useFormik } from "formik";
 import Navbar from "../../Navbar/Navbar";
 import Sidebar from "../../Homebar/Homebar";
 import axios from "axios";
+import Box from '@mui/material/Box';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Divider from '@mui/material/Divider';
+import InboxIcon from '@mui/icons-material/Inbox';
+import DraftsIcon from '@mui/icons-material/Drafts';
 
 export default function Assignments() {
-
-    // const {state} = useLocation();
     const navigate = useNavigate();
-    axios.defaults.withCredentials = true;
 
-    // const [courses, setCourses] = React.useState(state.courses)
-
-    const goToSections = (ev) => {
-        // navigate('/admin/sections', {state:{
-        //   sections: res.data.sections
-        // }})
+    const toAssignment = (id) => {
+        sessionStorage.setItem("assignid", id)
+        navigate(`/student/courses/assignments/assignment`)
     }
 
+    const displayAssignments = () => {
+        // try {
+        //     const enrolledCourses = await axios.get('http://localhost:8000/student/courses')
+        // } catch (err) {
+        //     console.log(err)
+        // }
 
-    let assignments = [{ "ID": "1", "title": "Assignment 1", "publishedDate": "24/10/2021", "deadline": "24/10/2021" }]
+        const fetchedAssignments = [
+            { title: 'Assignment 1', deadline: '19th April' },
+            { title: 'Assignment 2', deadline: '17th April' },
+            { title: 'Assignment 3', deadline: '20th April' },
+            { title: 'Assignment 4', deadline: '25th April' },
+            { title: 'Assignment 5', deadline: '29th April' },
+        ]
+
+        const assignComponents = []
+
+        fetchedAssignments.map((assign) => {
+            assignComponents.push(
+                <ListItem disablePadding>
+                    <ListItemButton sx={{}} onClick={() => toAssignment(assign.title)}>
+                        <ListItemText primary={assign.title} />
+                        <ListItemText primary={assign.deadline} />
+                    </ListItemButton>
+                </ListItem>
+            )
+        })
+
+        return assignComponents
+    }
+
+    const fetchedAssignments = [
+        { title: 'Assignment 1', deadline: '19th April' },
+        { title: 'Assignment 2', deadline: '17th April' },
+        { title: 'Assignment 3', deadline: '20th April' },
+        { title: 'Assignment 4', deadline: '25th April' },
+        { title: 'Assignment 5', deadline: '29th April' },
+    ]
 
     return (
         <div>
             <Navbar></Navbar>
             <Sidebar></Sidebar>
 
-            {/* <div class="col d-flex justify-content-center" style={{'marginLeft':'25%'}}>
-            <div class="card text-center m-2" style={{'width':'95%'}}>
-            </div>
-        </div >
-        <br /> <br /> */}
-            <div class="col d-flex justify-content-center" style={{'marginLeft':'25%'}}>
-            <div class="card text-center m-2" style={{'width':'95%'}}>
-                <div className="Courses display-5 fw-bold" style={{'color': 'white', 'backgroundColor':'#0F245A'}}>
-                    Assignments
-                </div>
+            {/* <h2 className="title" style={{ 'margin-left': '25%', 'text-align': 'center' }}>Assignments</h2> */}
 
-                <table className="table table-striped">
-                    <thead>
-                        <tr>
-                        <th scope="col">#</th>
-                        <th scope="col" style={{'text-align':'center'}}>Title</th>
-                        <th scope="col" style={{'text-align':'center'}}>Published On</th>
-                        <th scope="col" style={{'text-align':'center'}}>Deadline</th>
-                        <th scope="col" style={{'text-align':'center'}}>Feedback</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {assignments.map((assign, idx)=> (
-                        <tr key={idx}>
-                        <th scope="row">{idx + 1}</th>
-                        <td>{assign.title}</td>
-                        <td>{assign.publishedDate}</td>
-                        <td>{assign.deadline}</td>
-                        <td><u className = "courseToSection text-primary" onClick={goToSections}>View Feedback</u></td>
-                        </tr>
-                    ))}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        </div>
+            {/* <div class="col d-flex justify-content-center" style={{ 'marginLeft': '25%' }}>
+                <div class="card text-center m-2" style={{ 'width': '95%' }}>
+                </div>
+            </div > */}
+            <br /> <br />
+
+
+            <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', marginLeft: '50%', marginTop: '2%', border: 1, borderRadius: '15px'}}>
+                    <nav aria-label="main mailbox folders">
+                        <List>
+                            <ListItem disablePadding>
+                                <ListItemButton sx={{}}>
+                                    <ListItemText primary='Title' />
+                                    <ListItemText primary='Deadline' />
+                                    <ListItemText primary='Deadline' />
+                                </ListItemButton>
+                            </ListItem>
+                            {
+                                displayAssignments().map((assign) => {
+                                    return assign
+                                })
+                            }
+                        </List>
+                    </nav>
+                </Box>
+
+        </div >
     )
 }
