@@ -2,8 +2,8 @@ import React from 'react'
 import './quizzes.css'
 import {Link, useNavigate} from 'react-router-dom';
 import { useLocation } from "react-router-dom";
-import Navbar from "../../../components/Navbar/Navbar";
-import Sidebar from "../../../components/Sidebar Student/SidebarS";
+import Navbar from "../../student/Navbar/Navbar";
+import Homebar from "../../student/Homebar/Homebar";
 
 const Quizzes = () => {
 
@@ -13,7 +13,7 @@ const Quizzes = () => {
         <body>
     <div> 
         <Navbar></Navbar>
-        <Sidebar></Sidebar>
+        <Homebar></Homebar>
 
         <div class="chem">
         </div> 

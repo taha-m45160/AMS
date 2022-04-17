@@ -13,7 +13,8 @@ import CourseHome from './pages/student/courses/overview/overview'
 import StudentResources from './pages/student/courses/resources/resources'
 import StudentAssignments from './pages/student/courses/assignments/assignments'
 import StudentAssignment from './pages/student/courses/assignments/assignment/assignment'
-
+import StudentQuizzes from './pages/student/quizzes/quizzes'
+import StudentAttemptQuiz from './pages/student/quizzes/createquiz/attemptQuiz'
 //Parent
 import ParentHomepage from './pages/parents/Homepage/Homepage'
 
@@ -53,6 +54,8 @@ function App() {
               <Route path="/student/courses/resources" element={<StudentResources />}/>
               <Route path="/student/courses/assignments" element={<StudentAssignments />}/>
               <Route path="/student/courses/assignments/assignment" element={<StudentAssignment />}/>
+              <Route path="/student/courses/quizzes" element={<StudentQuizzes />}/>
+              <Route path="/student/courses/quizzes/attemptquiz" element={<StudentAttemptQuiz />}/>
           </Routes>
       </Router>
     </div>

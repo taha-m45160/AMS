@@ -40,7 +40,7 @@ const Navbar = () => {
                         </div>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item m-3" onClick={goToAccountDetails}>Account details</a></li>
+                        <li><a class="dropdown-item m-3" onClick={goToAccountDetails}> Account Details</a></li>
                         <li><a class="dropdown-item m-3" onClick={logout}> <span> Logout </span></a></li>
                     </ul>
                 </div>
