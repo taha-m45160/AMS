@@ -1,10 +1,10 @@
 import React from 'react'
 import './Homepage.css'
-import Navbar from './../Navbar/Navbar'
-import Homebar from './..//Homebar/Homebar'
+import Navbar from '../Navbar/Navbar'
+import Homebar from '../Homebar/Homebar'
 import {useLocation} from 'react-router-dom'
 
-const App = () => {
+const StudentHomepage = () => {
     const {state} = useLocation();
 
     return (
@@ -12,7 +12,7 @@ const App = () => {
             <Navbar></Navbar>
             <Homebar></Homebar>
             <div className='Welcome display-3'>
-                <h2 className='display-1' align='center'>Welcome back, <span style={{'font-weight': 'bold'}}>{state.name}</span>!</h2>
+                <h2 className='display-1' align='center'>Welcome back, <span style={{'font-weight': 'bold'}}>Hi</span>!</h2>
             </div>
             <br />
             <h1 className="heading display-5 fw-bold" >Announcements</h1>
@@ -31,4 +31,4 @@ const App = () => {
     )
 }
 
-export default App
+export default StudentHomepage

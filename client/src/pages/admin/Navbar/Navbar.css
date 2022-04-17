@@ -1,6 +1,5 @@
 .nav-container{
-    display: flex;
-    position: fixed;
+    display: flex;  
     top: 0px;
     width: 100%;
     justify-content: space-between;
