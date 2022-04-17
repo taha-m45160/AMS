@@ -20,7 +20,7 @@ export default function Announcements() {
         title: title,
         body: body
     }
-    const res = await axios.post("http://localhost:8000/admin/createAnnouncement", announcement)
+    const res = await axios.post("https://academic-management-system.herokuapp.com/admin/createAnnouncement", announcement)
     setMsg(res.data.msg)
       setTimeout(() => {
         setMsg('')
@@ -42,7 +42,7 @@ export default function Announcements() {
   <div>
     <Navbar></Navbar>
     <Homebar></Homebar>
-    <div className="col d-flex justify-content-center" style={{'marginLeft':'350px'}}>
+    <div className="col d-flex justify-content-center" id="col5">
         <div className="card text-center m-2" style={{'width':'95%'}}>
             <div className="card-body">
             <div className="card-header display-5 fw-bold" style={{'color': 'white', 'backgroundColor':'#0F245A'}}>
@@ -62,7 +62,7 @@ export default function Announcements() {
             </div>
       </div>
     </div >
-    <div className="col d-flex justify-content-center" style={{'marginLeft':'350px'}}>
+    <div className="col d-flex justify-content-center" id="col6">
         <div className="card text-center m-2" style={{'width':'95%'}}>
           <div className="card-header display-5 fw-bold" style={{'color': 'white', 'backgroundColor':'#0F245A'}}>
             Announcement

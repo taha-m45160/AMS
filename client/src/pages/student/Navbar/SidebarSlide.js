@@ -8,51 +8,41 @@ import axios from 'axios';
 const SideBar = ({ isOpen, toggle }) => {
 
     const navigate = useNavigate();
-    const [errMsg, setErrMsg] = React.useState('')
     axios.defaults.withCredentials = true
 
     const goToHome = async (ev) => {
-        ev.preventDefault();
-        navigate('/student');
+        ev.preventDefault()
+        const res1 = await axios.get('https://academic-management-system.herokuapp.com/whoami')
+        const res2 = await axios.get('https://academic-management-system.herokuapp.com/getAnnouncements')
+        navigate(`/student/`, {state:{
+            name: res1.data.user.name.first,
+            announcements: res2.data.announcements
+        }})
     }
 
     const goToCourses = async (ev) => {
         ev.preventDefault();
         try{
-            const res = await axios.get('http://localhost:8000/student/courses', {withCredentials: true});
-            if (res.data.courses.length === 0){
-                setErrMsg("No course found.")
-            }
-            else {
-                navigate('/student/courses', {state: {
-                    courses: res.data.courses,
-                }})
-            }
+            const res = await axios.get('https://academic-management-system.herokuapp.com/students/courses');
+            navigate('/student/courses', {state: {
+                courses: res.data.courses
+            }})
         }
         catch (err) {
-            if(err.response){
-                setErrMsg(err.response.statusText)
-            }
+            console.log(err)
         }
     }
 
     const goToAnnouncements = async (ev) => {
         ev.preventDefault();
         try{
-            const res = await axios.get('http://localhost:8000/student/announcements', {withCredentials: true});
-            if (res.data.announcements.length === 0){
-                setErrMsg("No announcement found.")
-            }
-            else {
-                navigate('/student/announcements', {state: {
-                    announcements: res.data.announcements,
-                }})
-            }
+            const res = await axios.get('https://academic-management-system.herokuapp.com/getAnnouncements', {withCredentials: true});
+            navigate('/student/announcements', {state: {
+                announcements: res.data.announcements,
+            }})
         }
         catch (err) {
-            if(err.response){
-                setErrMsg(err.response.statusText)
-            }
+            console.log(err)
         }
     }
 
@@ -60,7 +50,6 @@ const SideBar = ({ isOpen, toggle }) => {
         ev.preventDefault();
         navigate('/student/help');
     }
-
 
     return (
         <SideBarContainer isOpen={isOpen} onClick={toggle}>

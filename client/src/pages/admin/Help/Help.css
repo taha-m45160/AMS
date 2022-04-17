@@ -1,0 +1,113 @@
+body{
+    background-color: #ffffff;
+    line-height: 120%;
+    margin: 0;
+}
+
+.container{
+    width: 100%; /* making the text adaptive */
+    margin: auto;  /*pushing text to middle*/
+}
+
+.heading{
+    transition: ease all .5s;
+    margin-left: 350px;
+    font-style: normal;
+    color:#0F245A;
+    text-align: center;
+    margin-top: 4%;
+}
+
+.heading2{
+    margin-left: 350px;
+    font-style: normal;
+    color:#0F245A;
+    text-align: center;
+    margin-top: 1%;
+}
+
+.heading3{
+    transition: ease all .5s;
+    margin-left: 350px;
+    font-style: normal;
+    color:#0F245A;
+    text-align: center;
+}
+
+.heading10{
+    transition: ease all .5s;
+    margin-left: 350px;
+    font-style: normal;
+    color:#0F245A;
+    text-align: center;
+}
+
+.heading4{
+    transition: ease all .5s;
+    margin-left: 350px;
+    font-style: normal;
+    background-color: aliceblue;
+    color:#0F245A;
+    text-align: left;
+    margin-top: 1%;
+    width: 100%;
+}
+
+.heading4 h3{
+    transition: ease all .5s;
+    margin-left: 350px;
+    color:#0F245A;
+    font-style: normal;
+    margin-left: 8%;
+}
+
+.heading4 p{
+    transition: ease all .5s;
+    color:#0F245A;
+    font-style: normal;
+    margin-left: 8%;
+}
+
+.heading4 h4{
+    transition: ease all .5s;
+    margin-left: 350px;
+    color:#0F245A;
+    font-style: normal;
+    margin-left: 8%;
+}
+
+.heading5{
+    transition: ease all .5s;
+    margin-left: 350px;
+    font-style: normal;
+    color:#0F245A;
+    text-align: center;
+    margin-top: 3%;
+}
+
+@media (max-width: 1150px) {
+    .heading{
+        transition: ease all .5s;
+        margin-left: 0;
+    }
+    .heading2{
+        transition: ease all .5s;
+        margin-left: 0;
+    }
+    .heading3{
+        transition: ease all .5s;
+        margin-left: 0;
+    }
+    .heading4{
+        transition: ease all .5s;
+        margin-left: 0;
+    }
+    .heading5{
+        transition: ease all .5s;
+        margin-left: 0;
+    }
+    .heading10{
+        transition: ease all .5s;
+        margin-left: 0;
+    }
+}

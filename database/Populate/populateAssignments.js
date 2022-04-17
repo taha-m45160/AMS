@@ -3,7 +3,7 @@ const {readFile} = require('fs').promises
 
 async function populateAssignments(){
 
-    const file = await readFile('./dummy.pdf')
+    const file = await fs.readFile('./dummy.pdf', {encoding: 'base64'});
     
     var d = new Date();
     var year = d.getFullYear();

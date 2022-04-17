@@ -19,7 +19,7 @@ const SideBar = ({ isOpen, toggle }) => {
     const goToStudent = async (ev) => {
         ev.preventDefault();
         try{
-            const res = await axios.get('http://localhost:8000/parent/students', {withCredentials: true});
+            const res = await axios.get('https://academic-management-system.herokuapp.com/parent/students', {withCredentials: true});
             if (res.data.students.length === 0){
                 setErrMsg("No course found.")
             }
@@ -39,7 +39,7 @@ const SideBar = ({ isOpen, toggle }) => {
     const goToMeeting = async (ev) => {
         ev.preventDefault();
         try{
-            const res = await axios.get('http://localhost:8000/parent/meeting', {withCredentials: true});
+            const res = await axios.get('https://academic-management-system.herokuapp.com/parent/meeting', {withCredentials: true});
             if (res.data.meeting.length === 0){
                 setErrMsg("No announcement found.")
             }
@@ -59,7 +59,7 @@ const SideBar = ({ isOpen, toggle }) => {
     const goToAnnouncements = async (ev) => {
         ev.preventDefault();
         try{
-            const res = await axios.get('http://localhost:8000/parent/announcements', {withCredentials: true});
+            const res = await axios.get('https://academic-management-system.herokuapp.com/parent/announcements', {withCredentials: true});
             if (res.data.announcements.length === 0){
                 setErrMsg("No announcement found.")
             }

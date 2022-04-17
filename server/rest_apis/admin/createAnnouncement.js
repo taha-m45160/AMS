@@ -3,7 +3,6 @@ const sanitize = require("mongo-sanitize")
 
 async function create_announcement(req, res){
     try{
-        console.log('request')
         if(res.userType === 'Admin'){
             const body = sanitize(req.body.body)
             const title = sanitize(req.body.title)

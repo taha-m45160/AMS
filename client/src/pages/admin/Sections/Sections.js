@@ -26,7 +26,7 @@ export default function Sections() {
               year: year
             }
             console.log(section)
-            const res = await axios.post("http://localhost:8000/admin/createSection", section)
+            const res = await axios.post("https://academic-management-system.herokuapp.com/admin/createSection", section)
             setSections([...sections, res.data.section])
         } catch(err){
           console.log(err);
@@ -42,7 +42,7 @@ export default function Sections() {
           term: term,
           year: year
         }
-        const res = await axios.post("http://localhost:8000/admin/getEnrolled", section)
+        const res = await axios.post("https://academic-management-system.herokuapp.com/admin/getEnrolled", section)
         navigate('/admin/enroll', {state:{
           section: section,
           students: res.data.students,

@@ -5,17 +5,29 @@ import {Person} from '@material-ui/icons/';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import SidebarSlide from './SidebarSlide';
 import { useState } from 'react';
+import axios from "axios"
 
 const Navbar = () => {
     const navigate = useNavigate();
+    axios.defaults.withCredentials = true
 
-    const logout = (ev) => {
+    const logout = async (ev) => {
         ev.preventDefault();
-        navigate('/logout');
+        try{
+            const res = await axios.get('http://localhost:8000/logout')
+            navigate('/');
+        } catch(err) {
+            console.log(err)
+            navigate('/')
+        }
     }
-    const goToAccountDetails = (ev) => {
+    const goToAccountDetails = async (ev) => {
         ev.preventDefault();
-        navigate('/accountDetails');
+        const res = await axios.get("http://localhost:8000/whoami")
+        navigate('/teacher/changePassword', {state:{
+            heading: 'Account Details',
+            user: res.data.user
+        }})
     }
 
     const [isOpen, setIsOpen] = useState(false)

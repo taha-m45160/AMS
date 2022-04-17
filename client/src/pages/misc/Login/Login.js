@@ -29,8 +29,8 @@ const Login = () => {
                 password : password
             }
             try{
-                const res1 = await axios.post('http://localhost:8000/login', info);
-                const res2 = await axios.get('http://localhost:8000/getAnnouncements')
+                const res1 = await axios.post('https://academic-management-system.herokuapp.com/login', info);
+                const res2 = await axios.get('https://academic-management-system.herokuapp.com/getAnnouncements')
                 navigate(`/${res1.data.role}/`, {state:{
                     name: res1.data.name,
                     announcements: res2.data.announcements

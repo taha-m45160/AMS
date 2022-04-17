@@ -52,3 +52,24 @@ border: 2px solid rgba(0, 0, 0, 0.02);
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
 }
+
+#col5{
+    transition: ease all .5s;
+    margin-left: 350px;
+}
+
+#col6{
+    transition: ease all .5s;
+    margin-left: 350px;
+}
+
+@media (max-width: 1150px) {
+    #col5{
+        transition: ease all .5s;
+        margin-left: 0;
+    }
+    #col6{
+        transition: ease all .5s;
+        margin-left: 0;
+    }
+}

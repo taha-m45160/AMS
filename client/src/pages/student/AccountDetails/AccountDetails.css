@@ -1,0 +1,21 @@
+#col10{
+    transition: ease all .5s;
+    margin-left:350px
+}
+
+#col11{
+    transition: ease all .5s;
+    margin-left:350px
+}
+
+@media (max-width: 1150px){
+    #col10{
+        transition: ease all .5s;
+        margin-left: 0;
+    }
+
+    #col11{
+        transition: ease all .5s;
+        margin-left: 0;
+    }
+}

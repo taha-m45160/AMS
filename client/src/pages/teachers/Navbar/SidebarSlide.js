@@ -13,18 +13,19 @@ const SideBar = ({ isOpen, toggle }) => {
 
     const goToHome = async (ev) => {
         ev.preventDefault();
-        navigate('/parent');
+        navigate('/teacher');
     }
 
     const goToCourses = async (ev) => {
         ev.preventDefault();
         try{
-            const res = await axios.get('http://localhost:8000/parent/courses', {withCredentials: true});
+            const res = await axios.post('http://localhost:8000/teacher/courses', {withCredentials: true})
             if (res.data.courses.length === 0){
+                console.log('here')
                 setErrMsg("No course found.")
             }
             else {
-                navigate('/parent/courses', {state: {
+                navigate('/teacher/courses', {state: {
                     courses: res.data.courses,
                 }})
             }
@@ -39,12 +40,12 @@ const SideBar = ({ isOpen, toggle }) => {
     const goToAnnouncements = async (ev) => {
         ev.preventDefault();
         try{
-            const res = await axios.get('http://localhost:8000/parent/announcements', {withCredentials: true});
+            const res = await axios.get('http://localhost:8000/teacher/announcements', {withCredentials: true});
             if (res.data.announcements.length === 0){
                 setErrMsg("No announcement found.")
             }
             else {
-                navigate('/parent/announcements', {state: {
+                navigate('/teacher/announcements', {state: {
                     announcements: res.data.announcements,
                 }})
             }
@@ -58,7 +59,7 @@ const SideBar = ({ isOpen, toggle }) => {
 
     const goToHelp = async (ev) => {
         ev.preventDefault();
-        navigate('/parent/help');
+        navigate('/teacher/help');
     }
 
 

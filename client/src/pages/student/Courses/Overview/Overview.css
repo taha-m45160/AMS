@@ -1,0 +1,17 @@
+.card1{
+    transition: ease all .5s;
+    width: 40%;
+    margin-left: 41.5%;
+    margin-top: 150px;
+    transform: scale(1.4);
+}
+
+@media (max-width: 1150px) {
+    .card1{
+        margin-top: 150px;
+        transition: ease all .5s;
+        width: 50%;
+        margin-left: 25%;
+        transform: scale(1.4);
+    }
+}

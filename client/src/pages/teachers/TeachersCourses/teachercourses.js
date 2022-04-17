@@ -1,8 +1,8 @@
 import "./teachercourses.css";
 import axios from "axios";
 import {useNavigate} from 'react-router-dom';
-import Navbar from "../../../components/Navbar/Navbar";
-import Homebar from "../../../components/HomebarT/HomebarT";
+import Navbar from "../Navbar/Navbar";
+import Homebar from "../Homebar/Homebar";
 
 
 export default function TeacherCourses() {

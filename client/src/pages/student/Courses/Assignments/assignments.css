@@ -1,0 +1,22 @@
+#col17{
+    margin-left: 25%;
+    transition: ease all .5s;
+}
+
+#col18{
+    margin-left: 25%;
+    border-radius: 15px;
+    transition: ease all .5s;
+}
+
+@media (max-width: 1150px) {
+    #col17{
+        margin-left: 0%;
+        transition: ease all .5s;
+    }
+    #col18{
+        margin-left: 0%;
+        border-radius: 0;
+        transition: ease all .5s;
+    }
+}

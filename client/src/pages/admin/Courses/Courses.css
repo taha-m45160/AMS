@@ -48,3 +48,24 @@ border: 2px solid rgba(0, 0, 0, 0.02);
 .courseToSection:hover {
     cursor: pointer;
 }
+
+#col3{
+    transition: ease all .5s;
+    margin-left: 350px;
+}
+
+#col4{
+    transition: ease all .5s;
+    margin-left: 350px;
+}
+
+@media (max-width: 1150px) {
+    #col3{
+        transition: ease all .5s;
+        margin-left: 0;
+    }
+    #col4{
+        transition: ease all .5s;
+        margin-left: 0;
+    }
+}

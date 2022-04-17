@@ -10,16 +10,18 @@ import Homebar from '../Homebar/Homebar'
 export default function Courses() {
     const {state} = useLocation();
     const navigate = useNavigate();
-    axios.defaults.withCredentials = true; 
+    axios.defaults.withCredentials = true;
 
     const [courses, setCourses] = React.useState(state.courses)
 
-    const goToSections = (ev) => {
+    const goToSections = async (ev, course_ID, course_title) => {
       ev.preventDefault();
-      
-      // navigate('/admin/sections', {state:{
-      //   sections: res.data.sections
-      // }})
+      const res = await axios.post('https://academic-management-system.herokuapp.com/admin/sections', {course_ID: course_ID})
+      navigate('/admin/sections', {state:{
+        course_ID: course_ID,
+        course_title: course_title,
+        sections: res.data.sections
+      }})
     }
 
     const formik = useFormik({
@@ -30,7 +32,7 @@ export default function Courses() {
       onSubmit: (values) => {
         axios
           .post(
-            "http://localhost:8000/admin/createCourse",
+            "https://academic-management-system.herokuapp.com/admin/createCourse",
             values
           )
           .then((res) => {
@@ -46,12 +48,12 @@ export default function Courses() {
       <div>
         <Navbar></Navbar>
         <Homebar></Homebar>
-        <div class="col d-flex justify-content-center" style={{'marginLeft':'25%'}}>
-        <div class="card text-center m-2" style={{'width':'95%'}}>
-          <div class="card-header display-5 fw-bold" style={{'color': 'white', 'backgroundColor':'#0F245A'}}>
+        <div className="col d-flex justify-content-center" id="col3">
+        <div className="card text-center m-2" style={{'width':'95%'}}>
+          <div className="card-header display-5 fw-bold" style={{'color': 'white', 'backgroundColor':'#0F245A'}}>
             Create Course
           </div>
-          <div class="card-body">
+          <div className="card-body">
             <form onSubmit={formik.handleSubmit} className="pass-form">
               <br />
             <div className="fieldWrap">
@@ -83,8 +85,8 @@ export default function Courses() {
       </div>
       </div >
       <br /> <br />
-      <div class="col d-flex justify-content-center" style={{'marginLeft':'25%'}}>
-        <div class="card text-center m-2" style={{'width':'95%'}}>
+      <div className="col d-flex justify-content-center" id="col4">
+        <div className="card text-center m-2" style={{'width':'95%'}}>
             <div className="Courses display-5 fw-bold" style={{'color': 'white', 'backgroundColor':'#0F245A'}}>
               Courses
             </div>
@@ -92,15 +94,15 @@ export default function Courses() {
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col" style={{'text-align':'center'}}>Course ID</th>
-                  <th scope="col" style={{'text-align':'center'}}>Title</th>
+                  <th scope="col" style={{'textAlign':'center'}}>Course ID</th>
+                  <th scope="col" style={{'textAlign':'center'}}>Title</th>
                 </tr>
               </thead>
               <tbody>
               {courses.map((course, idx)=> (
                 <tr key={idx}>
                   <th scope="row">{idx}</th>
-                  <td><u className="courseToSection text-primary" onClick={goToSections}>{course.ID} </u></td>
+                  <td><a className="courseToSection text-primary" onClick={(ev) => {goToSections(ev, course.ID, course.title)}} >{course.ID} </a></td>
                   <td>{course.title}</td>
                 </tr>
               ))}

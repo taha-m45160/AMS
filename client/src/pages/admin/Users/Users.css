@@ -21,7 +21,7 @@
     border: none;
     border-radius: 20px;
     box-sizing: border-box;
-border: 2px solid rgba(0, 0, 0, 0.02);
+    border: 2px solid rgba(0, 0, 0, 0.02);
     margin-bottom: 15px;
     margin-top: 15px;
     text-align: center;
@@ -45,4 +45,25 @@ border: 2px solid rgba(0, 0, 0, 0.02);
     margin-right: 5px;
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
+}
+
+#col1{
+    transition: ease all .5s;
+    margin-left: 350px;
+}
+
+#col2{
+    transition: ease all .5s;
+    margin-left: 350px;
+}
+
+@media (max-width: 1150px) {
+    #col1{
+        transition: ease all .5s;
+        margin-left: 0;
+    }
+    #col2{
+        transition: ease all .5s;
+        margin-left: 0;
+    }
 }

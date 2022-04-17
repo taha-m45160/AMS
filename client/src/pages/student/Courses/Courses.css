@@ -1,0 +1,25 @@
+
+.tab {
+    border: 2px solid black;
+    text-align: center;
+    width: 100%;
+}
+
+.courses h1 {
+    text-align: center;
+}
+
+.c1{
+    transition: ease all .5s;
+    width: 70%;
+    margin-top: 4%;
+    margin-left: 28%;
+}
+
+@media (max-width:1150px) {
+    .c1 {
+        transition: ease all .5s;
+        width: 100%;
+        margin-left: 0%;
+    }
+}

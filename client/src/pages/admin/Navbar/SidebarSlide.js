@@ -1,37 +1,58 @@
 import React from 'react';
 import { SideBarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu} from './SidebarElements';
-import {People, MenuBook, Group, Announcement, Help} from '@material-ui/icons/';
+import {People, MenuBook, Home, Announcement, Help} from '@material-ui/icons/';
 import {useNavigate} from 'react-router-dom'
 import './SidebarSlide.css'
+import axios from 'axios'
 
 const SideBar = ({ isOpen, toggle }) => {
 
     const navigate = useNavigate();
 
-    const goToUsers = (ev) => {
+    const goToUsers = async (ev) => {
         ev.preventDefault();
-        navigate('/admin/users');
+        try{
+            const res1 = await axios.get('https://academic-management-system.herokuapp.com/admin/getStudents')
+            const res2 = await axios.get('https://academic-management-system.herokuapp.com/admin/getTeachers')
+            const res3 = await axios.get('https://academic-management-system.herokuapp.com/admin/getParents')
+            const res4 = await axios.get('https://academic-management-system.herokuapp.com/admin/getAdmins')
+
+            navigate('/admin/users', {state: {
+                students: res1.data.users,
+                teachers: res2.data.users,
+                parents: res3.data.users,
+                admins: res4.data.users
+            }});
+        } catch(err) {
+            console.log(err)
+        }
     }
 
-    const goToCourses = (ev) => {
+    const goToCourses = async (ev) => {
         ev.preventDefault();
-        navigate('/admin/courses');
+        const res = await axios.get('https://academic-management-system.herokuapp.com/admin/courses')
+        navigate('/admin/courses', {state: {
+            courses: res.data.courses
+        }})
     }
 
-    const goToSections = (ev) => {
+    const goToAnnouncements = async (ev) => {
         ev.preventDefault();
-        navigate('/admin/sections');
+        const res = await axios.get('https://academic-management-system.herokuapp.com/getAnnouncements')
+        navigate('/admin/announcements', {state: {
+            announcements: res.data.announcements
+        }});
     }
 
-    const goToAnnouncements = (ev) => {
-        ev.preventDefault();
-        navigate('/admin/announcements');
-    }
-
-    const goToHelp = (ev) => {
+    const goToHelp = async (ev) => {
         ev.preventDefault();
         navigate('/admin/help');
     }
+
+    // const goToCalendar = async (ev) => {
+    //     ev.preventDefault();
+    //     navigate('student/calendar')
+    // }
 
 
     return (
@@ -49,10 +70,6 @@ const SideBar = ({ isOpen, toggle }) => {
                     <li className='item1'>
                         <MenuBook className='icon'></MenuBook>
                         <a className='click-items1' onClick={goToCourses} style={{"color":"white"}}>Courses</a>
-                    </li>
-                    <li className='item1'>
-                        <Group className='icon'></Group>
-                        <a className='click-items1' onClick={goToSections} style={{"color":"white"}}>Sections</a>
                     </li>
                     <li className='item1'>
                         <Announcement className='icon'></Announcement>

@@ -1,1 +1,0 @@
-# Academics Management System

@@ -12,6 +12,7 @@ connect(uri);
 const {login} = require('./rest_apis/login')
 const {getAnnouncements} = require('./rest_apis/getAnnouncements')
 const {whoami} = require('./rest_apis/whoami')
+const {changePasswordGeneral} = require('./rest_apis/changePasswordGeneral')
 
 // admin
 const {createAccount} = require('./rest_apis/admin/createAccount')
@@ -27,6 +28,14 @@ const {getParents} = require('./rest_apis/admin/getParents')
 const {getStudents} = require('./rest_apis/admin/getStudents')
 const {getTeachers} = require('./rest_apis/admin/getTeachers')
 const {getUser} = require('./rest_apis/admin/getUser')
+const {getSections} = require('./rest_apis/admin/getSections')
+
+// student
+const {getCoursesStudents} = require('./rest_apis/students/getCoursesStudents')
+const {getCourseDetailsStudents} = require('./rest_apis/students/getCourseDetails')
+const {getResourcesStudents} = require('./rest_apis/students/getResources')
+const {getQuizzesStudents} = require('./rest_apis/students/getQuizzes')
+const {getAssignmentsStudents} = require('./rest_apis/students/getAssignment')
 
 const PORT = process.env.PORT || 8000
 
@@ -52,6 +61,10 @@ app.get('/whoami', (authenticateUser), async (req, res) => {
     await whoami(req, res)
 })
 
+app.post('/changePassword', (authenticateUser), async (req, res) => {
+    await changePasswordGeneral(req, res)
+})
+
 
 // Admin
 
@@ -71,19 +84,15 @@ app.get('/admin/courses', (authenticateUser), async (req, res) => {
     await getCourses(req, res)
 })
 
-app.get('/admin/courses', (authenticateUser), async (req, res) => {
-    await getCourses(req, res)
-})
-
-app.get('/admin/createAnnouncement', (authenticateUser), async (req, res) => {
+app.post('/admin/createAnnouncement', (authenticateUser), async (req, res) => {
     await create_announcement(req, res)
 })
 
-app.get('/admin/createSection', (authenticateUser), async (req, res) => {
+app.post('/admin/createSection', (authenticateUser), async (req, res) => {
     await create_section(req, res)
 })
 
-app.get('/admin/enroll', (authenticateUser), async (req, res) => {
+app.post('/admin/enroll', (authenticateUser), async (req, res) => {
     await enroll(req, res)
 })
 
@@ -103,13 +112,18 @@ app.get('/admin/getStudents', (authenticateUser), async (req, res) => {
     await getStudents(req, res)
 })
 
-app.get('/admin/getUser', (authenticateUser), async (req, res) => {
+app.post('/admin/getUser', (authenticateUser), async (req, res) => {
     await getUser(req, res)
 })
 
-app.get('/admin/getEnrolled', (authenticateUser), async (req, res) => {
+app.post('/admin/getEnrolled', (authenticateUser), async (req, res) => {
     await getEnrolled(req, res)
 })
+
+app.post('/admin/sections', (authenticateUser), async (req, res) => {
+    await getSections(req, res)
+})
+
 
 // Parents
 
@@ -129,9 +143,30 @@ app.post('/parent/course/gradebook', (authenticateUser), async (req,res) => {
     await viewGradebook(req, res)
 })
 
-// Teachers
+// Students
+
+app.get('/students/courses', (authenticateUser), async (req,res) => {
+    await getCoursesStudents(req, res)
+})
+
+app.post('/students/getCourseDetails', (authenticateUser), async (req, res) => {
+    await getCourseDetailsStudents(req, res)
+})
+
+app.post('/students/getResources', (authenticateUser), async (req, res) => {
+    await getResourcesStudents(req, res)
+})
+
+app.post('/students/getQuizzes', (authenticateUser), async (req, res) => {
+    await getQuizzesStudents(req, res)
+})
+
+app.post('/students/getAssignments', (authenticateUser), async (req, res) => {
+    await getAssignmentsStudents(req, res)
+})
 
 
+// general
 
 app.get('/logout', (req, res) => {
     res.cookie('jwt', '', {maxAge:1})

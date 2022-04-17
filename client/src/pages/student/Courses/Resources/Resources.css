@@ -1,0 +1,31 @@
+.titleabc{
+    margin-top: 2%;
+    margin-left: 25%;
+    text-align: center;
+}
+
+.boxC{
+    width: 30%;
+    background-color: 'background.paper';
+    margin-left: 50%;
+    margin-top: 100px;
+    border: 0.1rem solid;
+    border-radius: 10px;
+    transform: scale(1.8);
+}
+
+@media (max-width: 1150px){
+    .titleabc{
+        margin-left: 0%;
+    }
+    .boxC{
+        min-width: 220px;
+        width: 30%; 
+        background-color: 'background.paper';
+        margin-left: 37.5%;
+        margin-top: 100px;
+        border: 0.1rem solid;
+        border-radius: 10px;
+        transform: scale(1.8);
+    }
+}

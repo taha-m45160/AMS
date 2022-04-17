@@ -28,7 +28,7 @@ export default function Enroll() {
               term: state.section.term,
               year: state.section.year
             }
-            const res = await axios.post("http://localhost:8000/admin/enroll", enroll)
+            const res = await axios.post("https://academic-management-system.herokuapp.com/admin/enroll", enroll)
             if(role === 'Student'){
               setStudents([...students, {student_ID: res.data.user.ID}])
             } else if(role === 'Teacher') {
@@ -41,7 +41,7 @@ export default function Enroll() {
 
       const goToUser = async (ev, user_ID) => {
         ev.preventDefault()
-        const res = await axios.post("http://localhost:8000/admin/getUser", {ID: user_ID})
+        const res = await axios.post("https://academic-management-system.herokuapp.com/admin/getUser", {ID: user_ID})
         navigate('/admin/changePassword', {state:{
           heading: `${res.data.user.name.first} ${res.data.user.name.last} - ${res.data.user.ID}`,
           user: res.data.user
@@ -51,7 +51,7 @@ export default function Enroll() {
       const changeRole = async (ev, r) => {
         ev.preventDefault()
         setRole(r)
-        const res = await axios.get(`http://localhost:8000/admin/get${r}s`)
+        const res = await axios.get(`https://academic-management-system.herokuapp.com/admin/get${r}s`)
         setList(res.data.users)
       }
 

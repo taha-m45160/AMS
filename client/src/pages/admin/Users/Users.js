@@ -41,7 +41,7 @@ export default function ChangePassword() {
             email: email,
             students: parentStudents,
         }
-        const res = await axios.post('http://localhost:8000/admin/createAccount', user)
+        const res = await axios.post('https://academic-management-system.herokuapp.com/admin/createAccount', user)
         setMsg(res.data.msg)
           setTimeout(() => {
             setMsg('')
@@ -71,7 +71,7 @@ export default function ChangePassword() {
 
   const goToUser = async (ev, user_ID) => {
     ev.preventDefault()
-    const res = await axios.post("http://localhost:8000/admin/getUser", {ID: user_ID})
+    const res = await axios.post("https://academic-management-system.herokuapp.com/admin/getUser", {ID: user_ID})
     navigate('/admin/changePassword', {state:{
       heading: `${res.data.user.name.first} ${res.data.user.name.last} - ${res.data.user.ID}`,
       user: res.data.user
@@ -135,7 +135,7 @@ const decreasePS = (ev) => {
   <div>
     <Navbar></Navbar>
     <Homebar></Homebar>
-    <div className="col d-flex justify-content-center" style={{'marginLeft':'350px'}}>
+    <div className="col d-flex justify-content-center" id="col1">
         <div className="card text-center m-2" style={{'width':'95%'}}>
           <div className="card-header display-5 fw-bold" style={{'color': 'white', 'backgroundColor':'#0F245A'}}>
             Create New User
@@ -264,7 +264,7 @@ const decreasePS = (ev) => {
         </div>
       </div>
       </div >
-    <div className="col d-flex justify-content-center" style={{'marginLeft':'350px'}}>
+    <div className="col d-flex justify-content-center"  id= "col2">
         <div className="card text-center m-2" style={{'width':'95%'}}>
             <div className="Users display-5 fw-bold" style={{'color': 'white', 'backgroundColor':'#0F245A'}}>
               Users

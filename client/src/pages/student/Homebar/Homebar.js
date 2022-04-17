@@ -1,78 +1,47 @@
 import React from 'react'
 import './Homebar.css'
 import {useNavigate} from 'react-router-dom'
-import {People, MenuBook, Announcement, Book, Help} from '@material-ui/icons/';
+import {Home, MenuBook, Announcement, Book, Help} from '@material-ui/icons/';
 import axios from 'axios';
 
 
 const Homebar = () => {
-
     const navigate = useNavigate();
-    const [errMsg, setErrMsg] = React.useState('')
     axios.defaults.withCredentials = true
 
     const goToHome = async (ev) => {
-        ev.preventDefault();
-        navigate('/student');
+        ev.preventDefault()
+        const res1 = await axios.get('https://academic-management-system.herokuapp.com/whoami')
+        const res2 = await axios.get('https://academic-management-system.herokuapp.com/getAnnouncements')
+        navigate(`/student/`, {state:{
+            name: res1.data.user.name.first,
+            announcements: res2.data.announcements
+        }})
     }
 
     const goToCourses = async (ev) => {
         ev.preventDefault();
         try{
-            const res = await axios.get('http://localhost:8000/student/courses', {withCredentials: true});
-            if (res.data.courses.length === 0){
-                setErrMsg("No course found.")
-            }
-            else {
-                navigate('/student/courses', {state: {
-                    courses: res.data.courses,
-                }})
-            }
+            const res = await axios.get('https://academic-management-system.herokuapp.com/students/courses');
+            navigate('/student/courses', {state: {
+                courses: res.data.courses
+            }})
         }
         catch (err) {
-            if(err.response){
-                setErrMsg(err.response.statusText)
-            }
-        }
-    }
-
-    const goToGradebook = async (ev) => {
-        ev.preventDefault();
-        try{
-            const res = await axios.get('http://localhost:8000/student/gradebook', {withCredentials: true});
-            if (res.data.gradebook.length === 0){
-                setErrMsg("No gradebook found.")
-            }
-            else {
-                navigate('/student/gradebook', {state: {
-                    gradebook: res.data.gradebook,
-                }})
-            }
-        }
-        catch (err) {
-            if(err.response){
-                setErrMsg(err.response.statusText)
-            }
+            console.log(err)
         }
     }
 
     const goToAnnouncements = async (ev) => {
         ev.preventDefault();
         try{
-            const res = await axios.get('http://localhost:8000/student/announcements', {withCredentials: true});
-            if (res.data.announcements.length === 0){
-                setErrMsg("No announcement found.")
-            }
-            else {
-                navigate('/student/announcements', {state: {
-                    announcements: res.data.announcements,
-                }})
-            }
+            const res = await axios.get('https://academic-management-system.herokuapp.com/getAnnouncements', {withCredentials: true});
+            navigate('/student/announcements', {state: {
+                announcements: res.data.announcements,
+            }})
         }
         catch (err) {
-            if(err.response){
-                setErrMsg(err.response.statusText)
-            }
+            console.log(err)
         }
     }
 
@@ -85,7 +54,7 @@ const Homebar = () => {
         <div className='bar2'>
             <ul className='bar-container2'>
                 <li className='item2'>
-                    <People className='icon2'></People>
+                    <Home className='icon2'></Home>
                     <a className='click-items2' onClick={goToHome}>Home</a>
                 </li>
                 <li className='item2'>

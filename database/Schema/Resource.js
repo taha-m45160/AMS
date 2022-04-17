@@ -15,7 +15,7 @@ const resourceSchema = new mongoose.Schema({
         required: true
     },
     attachment: {
-        type: Buffer,
+        type: String,
         required: true
     }
 })

@@ -1,0 +1,17 @@
+.item1{
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.click-items1{
+    margin-left: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.icon1 {
+    transform: scale(2.5);
+}
