@@ -83,7 +83,6 @@ export default function Assignments() {
                                 <ListItemButton sx={{}}>
                                     <ListItemText primary='Title' />
                                     <ListItemText primary='Deadline' />
-                                    <ListItemText primary='Deadline' />
                                 </ListItemButton>
                             </ListItem>
                             {
