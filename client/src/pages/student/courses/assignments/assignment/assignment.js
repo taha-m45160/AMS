@@ -83,7 +83,7 @@ export default function Assignment() {
                         <input class="form-control" type="file" id="formFileMultiple" multiple onChange={(ev) => setFiles(ev.target.value)} />
                     </div>
 
-                    <button type="button" class="btn btn-secondary btn-lg btn-block" onClick={() => submitAssignment()}> Submit </button>
+                    <button type="button" class="btn btn-secondary btn-lg btn-block" style={{'background-color':'#0F245A'}} onClick={() => submitAssignment()}> Submit </button>
                 </div>
             </div>
         </div>
