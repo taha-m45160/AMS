@@ -13,8 +13,8 @@ import CourseHome from './pages/student/courses/overview/overview'
 import StudentResources from './pages/student/courses/resources/resources'
 import StudentAssignments from './pages/student/courses/assignments/assignments'
 import StudentAssignment from './pages/student/courses/assignments/assignment/assignment'
-import StudentQuizzes from './pages/student/quizzes/quizzes'
-import StudentAttemptQuiz from './pages/student/quizzes/createquiz/attemptQuiz'
+import StudentQuizzes from './pages/student/courses/quizzes/quizzes'
+import StudentAttemptQuiz from './pages/student/courses/quizzes/attemptQuiz/attemptQuiz'
 //Parent
 import ParentHomepage from './pages/parents/Homepage/Homepage'
 

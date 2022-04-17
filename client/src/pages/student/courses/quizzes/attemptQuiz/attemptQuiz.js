@@ -1,11 +1,12 @@
 import React from 'react'
-import Navbar from "../../Navbar/Navbar";
-import Sidebar from "../../Homebar/Homebar";
+import Navbar from "../../../Navbar/Navbar";
+import Sidebar from "../../../Homebar/Homebar";
 import { useLocation } from "react-router-dom";
 import axios from "axios"
 
 const AttemptQuiz = () => {
     const [answers, setAnswers] = React.useState(new Array(2))
+    const [instructions, setInstructions] = React.useState('Instructions')
 
     let test = [{"question":"What is your age?", "options":["17", "18", "19", "20"], "marks":"4"}, {"question":"What is your name?", "options":["Samee", "Mutahar", "Taha", "Bilal"], "marks":"2"}]
 
@@ -39,8 +40,10 @@ const AttemptQuiz = () => {
         <div>
             <Navbar></Navbar>
             <Sidebar></Sidebar>
-            <h1 className="heading display-5 fw-bold">Quiz 1</h1>
-            <div className="list-group">
+
+            <h1 className="heading display-5 fw-bold" style={{'margin-left':'57.5%'}}>Quiz 1</h1>
+            <h4 style={{'margin-top':'2%', 'margin-left':'57.5%'}}>{instructions}</h4>
+            <div className="list-group" style={{'transform':'scale(1)', 'margin-top':'1%'}}>
                 {test.map((t, idx) => (
                     <a className="list-group-item list-group-item-action">
                         <div className="d-flex w-100 justify-content-between">
