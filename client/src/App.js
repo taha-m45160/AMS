@@ -10,6 +10,7 @@ import Login from './pages/misc/Login/Login.js'
 import StudentHomepage from './pages/student/Homepage/Homepage'
 import StudentCourses from './pages/student/courses/courses'
 import CourseHome from './pages/student/courses/overview/overview'
+import StudentResources from './pages/student/courses/resources/resources'
 
 
 //Parent
@@ -48,7 +49,7 @@ function App() {
               <Route path="/student/" element={<StudentHomepage/>}/>
               <Route path="/student/courses/" element={<StudentCourses/>}/>
               <Route path="/student/courses/home" element={<CourseHome />}/>
-          
+              <Route path="/student/courses/resources" element={<StudentResources />}/>
           </Routes>
       </Router>
     </div>
