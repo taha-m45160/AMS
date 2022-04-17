@@ -1,12 +1,11 @@
 body{
     background-color: #ffffff;
-    line-height: 1.4em;
+    line-height: 120%;
     margin: 0;
 }
 
 .container{
-    width : 200px;
-    width: 80%; /* making the text adaptive */
+    width: 100%; /* making the text adaptive */
     margin: auto;  /*pushing text to middle*/
 }
 
@@ -17,39 +16,37 @@ body{
     display: inline-block;
 }
 
- /* adding style to class */
+ 
 .box-1{
     background-color:#0F245A;
     color: #fff;
 
-    border-width: 3px; /* setting border width */
-    border-bottom-width: 5px; /* border all sides 3, but bottom 5 */
-    padding:2px;
-
-    margin: 0px; /* distance from the sides of the page */
+    border-width: 3%; 
+    border-bottom-width: 5%; 
+    padding:0.5%;
 }
 
 .box-1 h1{
-    font-family: 'Ruda';font-size: 40px; font-weight: bold;
+    font-family: 'Ruda';font-size: 225%; font-weight: bold;
     font-weight: 50;
     font-style: normal;
     text-align: center;
 
-    margin-top: 10px; /*adjusts h1 relative to top  */
+    margin-top: 1%; /*adjusts h1 relative to top  */
 }
 
 .heading{
     font-style: normal;
     color:#0F245A;
     text-align: left;
-    margin-top: 5%;
-    margin-left: 5%;
+    margin-top: 6%;
+    margin-left: 25%;
 }
 
 .boxes{
     background-color:#ffffff;
-    margin: 1rem;
-  padding: 2rem 2rem;
+    margin: 2%;
+  padding: 2%;
   text-align: center;
 }
 
@@ -57,25 +54,25 @@ body{
     display: inline-block;
     background-color:#0F245A;
     color: #fff;
-    width: 180px;
-    height: 180px;
+    width: 13%;
+    aspect-ratio: 1;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10%;
     margin-top: 1%;
-    font-family: 'Poppins';font-size: 20px; font-weight: bold;
     font-weight: 100;
     font-style: normal;
-    padding-top: 20px;
+    padding-top: 0.5%;
     margin-left: 5%;
 }
 
  .box-2 h2{
-    font-family: 'Poppins';font-size: 20px; font-weight: bold;
-    font-weight: 20;
+    font-family: 'Poppins';font-size: 125%; font-weight: bold;
+    font-weight: 400;
     font-style: normal;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 30%;
+    resize: vertical;
     
 }
 
@@ -83,5 +80,8 @@ body{
 {
         display:inline-block;
 }
+
+
+
 
 
