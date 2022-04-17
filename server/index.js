@@ -11,18 +11,22 @@ connect(uri);
 // rest apis
 const {login} = require('./rest_apis/login')
 const {getAnnouncements} = require('./rest_apis/getAnnouncements')
+const {whoami} = require('./rest_apis/whoami')
 
 // admin
 const {createAccount} = require('./rest_apis/admin/createAccount')
 const {changePassword} = require('./rest_apis/admin/changePassword')
 const {create_course} = require('./rest_apis/admin/createCourse')
 const {getCourses} = require('./rest_apis/admin/getCourses')
-
-const {viewAnnouncements} = require('./rest_apis/parent/viewAnnouncements')
-const {viewStudents} = require('./rest_apis/parent/viewStudents')
-const {viewTakes} = require('./rest_apis/parent/viewTakes')
-const {viewOverview} = require('./rest_apis/parent/viewOverview')
-const {viewGradebook} = require('./rest_apis/parent/viewGradebook')
+const {create_announcement} = require('./rest_apis/admin/createAnnouncement')
+const {create_section} = require('./rest_apis/admin/createSection')
+const {enroll} = require('./rest_apis/admin/enroll')
+const {getAdmins} = require('./rest_apis/admin/getAdmins')
+const {getEnrolled} = require('./rest_apis/admin/getEnrolled')
+const {getParents} = require('./rest_apis/admin/getParents')
+const {getStudents} = require('./rest_apis/admin/getStudents')
+const {getTeachers} = require('./rest_apis/admin/getTeachers')
+const {getUser} = require('./rest_apis/admin/getUser')
 
 const PORT = process.env.PORT || 8000
 
@@ -44,6 +48,11 @@ app.get('/getAnnouncements', (authenticateUser), async (req, res) => {
     await getAnnouncements(req, res)
 })
 
+app.get('/whoami', (authenticateUser), async (req, res) => {
+    await whoami(req, res)
+})
+
+
 // Admin
 
 app.post('/admin/changePassword', (authenticateUser), async (req, res) => {
@@ -62,6 +71,45 @@ app.get('/admin/courses', (authenticateUser), async (req, res) => {
     await getCourses(req, res)
 })
 
+app.get('/admin/courses', (authenticateUser), async (req, res) => {
+    await getCourses(req, res)
+})
+
+app.get('/admin/createAnnouncement', (authenticateUser), async (req, res) => {
+    await create_announcement(req, res)
+})
+
+app.get('/admin/createSection', (authenticateUser), async (req, res) => {
+    await create_section(req, res)
+})
+
+app.get('/admin/enroll', (authenticateUser), async (req, res) => {
+    await enroll(req, res)
+})
+
+app.get('/admin/getAdmins', (authenticateUser), async (req, res) => {
+    await getAdmins(req, res)
+})
+
+app.get('/admin/getParents', (authenticateUser), async (req, res) => {
+    await getParents(req, res)
+})
+
+app.get('/admin/getTeachers', (authenticateUser), async (req, res) => {
+    await getTeachers(req, res)
+})
+
+app.get('/admin/getStudents', (authenticateUser), async (req, res) => {
+    await getStudents(req, res)
+})
+
+app.get('/admin/getUser', (authenticateUser), async (req, res) => {
+    await getUser(req, res)
+})
+
+app.get('/admin/getEnrolled', (authenticateUser), async (req, res) => {
+    await getEnrolled(req, res)
+})
 
 // Parents
 

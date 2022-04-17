@@ -29,9 +29,12 @@ import TeacherHomepage from './pages/teachers/Homepage/Homepage'
 
 //Admin
 import AdminHomepage from './pages/admin/Homepage/Homepage'
-import ChangePassword from './pages/admin/changePassword/changePassword'
+import Sections from './pages/admin/Sections/Sections'
 import Courses from './pages/admin/Courses/Courses'
-import Enroll from './pages/admin/enroll/enroll'
+import Enroll from './pages/admin/Enroll/Enroll'
+import ChangePassword from './pages/admin/changePassword/changePassword'
+import Users from './pages/admin/Users/Users'
+import Announcements from './pages/admin/Announcements/Announcements'
 
 
 
@@ -42,12 +45,15 @@ function App() {
     <div>
       <Router>
           <Routes>
-              <Route path="/" element={<Login />}/>
-
+          <Route path="/" element={<Login />}/>
               <Route path="/admin/" element={(<AdminHomepage />)}/>
-              <Route path="/admin/users" element={<ChangePassword />}/>
+              <Route path="/admin/users" element={(<Users />)}/>
               <Route path="/admin/courses" element={<Courses/>}/>
+              <Route path="/admin/sections" element={<Sections/>}/>
               <Route path="/admin/enroll" element={<Enroll/>}/>
+              <Route path="/admin/changePassword" element={<ChangePassword/>}/>
+              <Route path="/admin/announcements" element={<Announcements/>}/>
+              
               <Route path="/student/" element={<StudentHomepage/>}/>
               <Route path="/student/courses/" element={<StudentCourses/>}/>
               <Route path="/student/courses/home" element={<CourseHome />}/>

@@ -1,0 +1,48 @@
+.createUserButton {
+    cursor: pointer;
+    width: 25%;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #0F245A, #0F245A);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    margin-bottom: 10px;
+}
+
+.inputField_ID {
+    width: 45%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.inputField_name {
+    width: 26%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-right: 5px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
