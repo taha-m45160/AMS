@@ -18,7 +18,7 @@ const studentsEnrolled = () => {
     
 
     <div className = "heading">
-        <h2> You have the following students enrolled: </h2> 
+        <h2> Please choose from the following students enrolled: </h2> 
     </div>
 
     <div className = "boxes">
