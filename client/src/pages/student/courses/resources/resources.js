@@ -1,70 +1,101 @@
-import "./resources.css";
-import axios from "axios";
+import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import Navbar from '../../../student/Navbar/Navbar'
-import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
-
-const columns = [
-    { field: 'id', headerName: 'ID', width: 90 },
-    {
-        field: 'title',
-        headerName: 'Title',
-        description: 'This column has a value getter and is not sortable.',
-        sortable: false,
-        width: 250,
-        valueGetter: (params) =>
-            `${params.row.title || ''}`,
-    },
-    { field: 'createdby', headerName: 'Created By', width: 130 },
-    {
-        field: 'modified',
-        headerName: 'Last Modified',
-        type: 'number',
-        width: 120,
-    },
-    { field: 'size', headerName: 'File Size', type: 'number', width: 120},
-];
+import { useLocation } from "react-router-dom";
+import { useFormik } from "formik";
+import Navbar from "../../Navbar/Navbar";
+import Sidebar from "../../Homebar/Homebar";
+import axios from "axios";
+import Box from '@mui/material/Box';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Divider from '@mui/material/Divider';
+import InboxIcon from '@mui/icons-material/Inbox';
+import DraftsIcon from '@mui/icons-material/Drafts';
 
 export default function Resources() {
-    const ccode = sessionStorage.getItem("ccode")
-    const ctitle = sessionStorage.getItem("ctitle")
+    const navigate = useNavigate();
 
-    const getResources = () => {
-        // try {
-        //     const res = await axios.get(`http://localhost:8000/students/courses/resources`)
-        // } catch (err) {
-        //     console.log(err)
-        // }
-
-        const res = [
-            { id: 1, title: 'Lecture2.pdf', createdby: 'Jon', modified: 35, size: 10 },
-            { id: 2, title: 'Course_Outline.docx', createdby: 'Brad', modified: 35, size: 10 }, 
-            { id: 3, title: 'OfficeHours.xlsx', createdby: 'Jon', modified: 35, size: 10 },
-            { id: 4, title: 'OfficeHours.xlsx', createdby: 'Jon', modified: 35, size: 10 }
-        ]
-
-        return res
+    const downloadFile = (attach) => {
+        console.log('yes')
     }
 
+
+
+    const displayResources = () => {
+        // try {
+        //     const enrolledCourses = await axios.get('http://localhost:8000/student/courses')
+        // } catch (err) {
+        //     console.log(err)
+        // }    
+
+        const fetchedResources = [
+            { name: 'haskell.pdf', section: '1', date: '19th April', attachment: '1.pdf' },
+            { name: 'haskell2.pdf', section: '12', date: '19th April', attachment: '2.pdf' },
+            { name: 'haskell3.pdf', section: '13', date: '19th April', attachment: '3.pdf' },
+            { name: 'haskell4.pdf', section: '4', date: '19th April', attachment: '4.pdf' },
+            { name: 'haskell5.pdf', section: '5', date: '19th April', attachment: '6.pdf' },
+        ]
+
+        const assignComponents = []
+
+        fetchedResources.map((assign) => {
+            assignComponents.push(
+                <ListItem disablePadding>
+                    <ListItemButton onClick={(ev) => downloadFile(assign.attachment)}>
+                        <ListItemText primary={assign.name} />
+                        <ListItemText primary={assign.section} />
+                        <ListItemText primary={assign.date} />
+                    </ListItemButton>
+                </ListItem>
+            )
+        })
+
+        return assignComponents
+    }
+
+    const fetchedResources = [
+        { name: 'haskell.pdf', section: '1', date: '19th April', attachment: '1.pdf' },
+        { name: 'haskell2.pdf', section: '12', date: '19th April', attachment: '2.pdf' },
+        { name: 'haskell3.pdf', section: '13', date: '19th April', attachment: '3.pdf' },
+        { name: 'haskell4.pdf', section: '4', date: '19th April', attachment: '4.pdf' },
+        { name: 'haskell5.pdf', section: '5', date: '19th April', attachment: '6.pdf' },
+    ]
+
     return (
-        <div className="resources">
-            <Navbar />
+        <div>
+            <Navbar></Navbar>
+            <Sidebar></Sidebar>
 
-            <h1 className="course-title">
-                CS-300: Advanced Programming
-                {/* {ccode}: {ctitle} */}
-            </h1>
+            <h1 className="title" style={{ 'margin-top': '2%', 'margin-left': '25%', 'text-align': 'center' }}>Resources</h1>
 
-            <div style={{ height: 267, width: '100%' }}>
-                <DataGrid
-                    rows={getResources()}
-                    columns={columns}
-                    pageSize={3}
-                    rowsPerPageOptions={[3]}
-                    checkboxSelection
-                />
-            </div>
-        </div>
-    );
+            {/* <div class="col d-flex justify-content-center" style={{ 'marginLeft': '25%' }}>
+                <div class="card text-center m-2" style={{ 'width': '95%' }}>
+                </div>
+            </div > */}
+            <br /> <br />
+
+
+            <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', marginLeft: '50%', marginTop: '5%', border: 1, borderRadius: '10px', transform: 'scale(1.8)'}}>
+                <nav aria-label="main mailbox folders">
+                    <List>
+                        <ListItemButton>
+                            <ListItemText primary='Title' style={{'text-decoration':'underline'}}/>
+                            <ListItemText primary='Section' style={{'text-decoration':'underline'}}/>
+                            <ListItemText primary='Date' style={{'text-decoration':'underline'}}/>
+                        </ListItemButton>
+
+                        {
+                            displayResources().map((assign) => {
+                                return assign
+                            })
+                        }
+                    </List>
+                </nav>
+            </Box>
+
+        </div >
+    )
 }

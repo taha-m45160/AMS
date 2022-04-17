@@ -2,34 +2,14 @@ import "./overview.css";
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from "../../../admin/Navbar/Navbar";
-import Homebar from "../../Homebar/Homebar";
+// import Navbar from '../../testnav/testnav'
+import Homebar from "../../courses/courseHome/courseHome";
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
-
-// const SimplePaper = () => {
-//     return (
-//         <Box
-//             sx={{
-//                 display: 'flex',
-//                 flexWrap: 'wrap',
-//                 '& > :not(style)': {
-//                     m: 1,
-//                     width: 128,
-//                     height: 128,
-//                 },
-//             }}
-//         >
-//             <Paper elevation={0} />
-//             <Paper />
-//             <Paper elevation={3} />
-//         </Box>
-//     );
-// }
 
 export default function CourseOverview() {
     const ccode = sessionStorage.getItem("course")
@@ -43,7 +23,7 @@ export default function CourseOverview() {
         // }
 
         return (
-            <h1 style={{'color':'#0F245A'}}>
+            <h1 style={{'color':'white'}}>
                 Advanced Programming
             </h1>
         );
@@ -76,7 +56,7 @@ export default function CourseOverview() {
             <div className="instructor">
                 Dr. Junaid Haroon
             </div>
-        );
+        );  
     }
 
     const getGradeBreakup = () => {
@@ -101,18 +81,20 @@ export default function CourseOverview() {
     const displayOverview = () => {
         return (
             <div className="course-info">
-                <Card sx={{ maxWidth: 500, marginLeft: '45%', marginTop: '7%', transform: 'scale(1.2)'}}>
-                    <Typography gutterBottom variant="h1" component="div" style={{ 'text-align': 'center', 'font-size':'25px'}}>
+                <Card sx={{ maxWidth: 600, marginLeft: '41.5%', marginTop: '7%', transform: 'scale(1.2)'}}>
+                    <Typography gutterBottom variant="h1" component="div" style={{ 'text-align': 'center', 'font-size':'25px', 'background-color':'#0F245A', 'padding':'1%'}}>
                         {getTitle()}
                     </Typography>
+
                     <CardContent>
                         <Typography gutterBottom variant="h4" component="div">
                             {getInstr()}
                         </Typography>
+                        <hr></hr>
                         <Typography variant="body1" color="text.secondary">
                             {getDesc()}
                         </Typography>
-                        <br></br>
+                        <hr></hr>
                         <Typography variant="body1" color="text.primary">
                             {getGradeBreakup()}
                         </Typography>
@@ -127,7 +109,9 @@ export default function CourseOverview() {
             <Navbar />
             <Homebar />
 
-            {displayOverview()}
+            <div>
+                {displayOverview()}
+            </div>
         </div>
     );
 }

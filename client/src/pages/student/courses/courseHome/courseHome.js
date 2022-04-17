@@ -1,5 +1,5 @@
 import React from 'react'
-import './Homebar.css'
+import './courseHome.css'
 import {useNavigate} from 'react-router-dom'
 import {People, MenuBook, Announcement, Book, Help} from '@material-ui/icons/';
 import axios from 'axios';
